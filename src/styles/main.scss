@@ -1,0 +1,40 @@
+@import "reset";
+@import "variables";
+@import "fonts";
+@import "spacing";
+
+:root {
+  font-size: 10px;
+  font-family: $quicksand;
+  color: $white;
+}
+
+body {
+  font-size: 2rem;
+}
+
+h1,h2 {
+  font-family: $orbitron;
+  font-weight: $medium-weight;
+  line-height: 1.25;
+}
+
+h1 {
+  font-size: 7rem;
+}
+
+h2 {
+  font-size: 5rem;
+}
+
+.sem-h-small {
+  font-family: $orbitron;
+  font-weight: $regular-weight;
+  font-size: 3rem;
+  color: $white;
+  line-height: 1.25;
+}
+
+.center {
+  text-align: center;
+}

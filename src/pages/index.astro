@@ -1,11 +1,58 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import { Image } from 'astro:assets';
+import logoImage from "../images/qsc_logo_outlined_cropped.png";
+import bg1 from "../images/bg/speaker_1.jpg";
+import bg2 from "../images/bg/case_comp.jpeg";
+import bg3 from "../images/bg/speaker_2.jpg";
+import bg4 from "../images/bg/case_comp_1.jpg";
+import bg5 from "../images/bg/speaker_3.jpg";
+import locationIcon from "../icons/location.svg"
+import calendarIcon from "../icons/calendar.svg"
+
+import "../styles/main.scss"
+import Index from "../styles/index.module.scss"
+import { getImage } from "astro:assets"
+import {callEndpoint} from "astro/dist/core/endpoint";
+import IconCard from "../components/IconCard.astro";
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Home">
 	<main>
+		<section class={Index.hero}>
+			<div class={Index.top}>
+				<div>
+					<div class={Index.logoContainer}>
+						<Image src={logoImage} alt="Queen's Space Conference Logo" style="height: auto; width: 50rem; object-fit: cover";/>
+					</div>
+					<div class={Index.headingDiv}>
+						<h1>Inspiring; <br/> Educating; <br/> Connecting.</h1>
+					</div>
+				</div>
+			</div>
+			<div  class={`center p-2 mt-1 ${Index.bottom}`}>
+				<p class="sem-h-small mb-1">Queen's Space Conference 2024</p>
+				<p>Connecting students with leaders in the space industry for over a decade</p>
+			</div>
+		</section>
 
+		<section class={Index.about}>
+			<div class={Index.bgs} aria-hidden="true">
+				<Image src={bg1} alt="bg image" style="width: 100%; height: auto; object-fit: contain"/>
+				<Image src={bg2} alt="bg image" style="width: 100%; height: auto; object-fit: contain"/>
+				<Image src={bg3} alt="bg image" style="width: 100%; height: auto; object-fit: contain"/>
+				<Image src={bg4} alt="bg image" style="width: 100%; height: auto; object-fit: contain"/>
+				<Image src={bg5} alt="bg image" style="width: 100%; height: auto; object-fit: contain"/>
+			</div>
+			<div class="pl-3 pt-2">
+				<h2>What is QSC?</h2>
+
+				<div class:list={["m-5", `${Index.points}`]}>
+					<IconCard>
+						We are an annual student-ran space conference based out of Kingston, Ontario. The conference will span two days, starting on February 2nd and ending the evening of the 3rd. It will include presentations from speakers, a case competition, an networking fair, and opportunities to connect with others at the conference.
+					</IconCard>
+				</div>
+			</div>
+		</section>
 	</main>
 </Layout>
-
