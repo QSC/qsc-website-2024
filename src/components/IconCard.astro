@@ -1,17 +1,17 @@
 ---
-import locationIcon from "../icons/location.svg";
-import calendarIcon from "../icons/calendar.svg";
-import Index from "../styles/index.module.scss";
-
-const { icons } = Astro.props;
+import IconCard from "../styles/IconCard.module.scss"
+const { iconList } = Astro.props;
 ---
 
 <div>
     <div class:list={["p-3"]}>
-        <img src={locationIcon.src} alt="icon of a map pin"/>
-        <img src={calendarIcon.src} alt="icon of a calendar"/>
+        {iconList.map((pair) => {
+            return (<img src={pair.url} alt={pair.alt}/>)
+        })}
     </div>
-    <div class={Index.pointsText}>
-        <p class={`p-2`}></p>
+    <div class={IconCard.pointsText}>
+        <p class={`p-2`}>
+            <slot />
+        </p>
     </div>
 </div>

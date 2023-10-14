@@ -48,9 +48,13 @@ import IconCard from "../components/IconCard.astro";
 				<h2>What is QSC?</h2>
 
 				<div class:list={["m-5", `${Index.points}`]}>
-					<IconCard>
+					<IconCard iconList={[{url:locationIcon.src, alt:"an icon of a map pin"}, {url:calendarIcon.src, alt:"an icon of a calendar"}]}>
 						We are an annual student-ran space conference based out of Kingston, Ontario. The conference will span two days, starting on February 2nd and ending the evening of the 3rd. It will include presentations from speakers, a case competition, an networking fair, and opportunities to connect with others at the conference.
 					</IconCard>
+					<!--<IconCard>-->
+					<!--	We strive to bring together industry professionals in order to provide delegates the most informative, inspiring, and memorable conference possible. A range of 5-7 speakers will talk about their role in the space industry, their contributions, and where we are headed. The talks tend to vary in technical detail and the bigger picture, and thus are suited for a range of backgrounds and interests-->
+
+					<!--</IconCard>-->
 				</div>
 			</div>
 		</section>

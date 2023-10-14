@@ -68,39 +68,7 @@
   }
 
   .points {
-    //display: flex;
-    //justify-content: center;
-    //align-items: center;
-    > div {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      gap: 2rem;
-      justify-content: center;
-      @media screen and (max-width: $screen-desktop) {
-      }
 
-      > div {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 1rem;
-        img:nth-child(1) {
-          height: 10rem;
-          width: auto;
-        }
-        img:nth-child(2) {
-          height: 12rem;
-          width: auto;
-        }
-      }
-      .pointsText {
-        max-width: 50vw;
-        p {
-          background-color: rgba($light-purple, 60%);
-          border-radius: 15px;
-        }
-      }
-    }
+
   }
 }
