@@ -5,8 +5,7 @@ import ShuttleArrowIcon from "./ShuttleArrowIcon.astro";
 const { question, answer } = Astro.props;
 ---
 
-<question>
-    <div>
+<faq-question>
     <div class={Question.header}>
         <p>{question}</p>
         <button class="question-button">
@@ -14,12 +13,12 @@ const { question, answer } = Astro.props;
                 <ShuttleArrowIcon/>
             </div>
         </button>
-    <div class:list={[Question.answer, "answ"]}>
+    </div>
+
+    <div id="question-answer" class:list={[Question.answer]}>
         <p>{answer}</p>
     </div>
-</div>
-    </div>
-</question>
+</faq-question>
 <script>
     class Question extends HTMLElement {
         constructor() {
@@ -32,10 +31,10 @@ const { question, answer } = Astro.props;
                 console.log("clicked");
                 answerShown = !answerShown
                 if(answerShown) {
-                    this.querySelector(">div div:nth-child(2)").classList.add("shown")
+                    this.querySelector("#question-answer").classList.add("shown")
                     this.querySelector("svg").classList.add("rotate180")
                 } else {
-                    this.querySelector(">div div:nth-child(2)").classList.remove("shown")
+                    this.querySelector("#question-answer").classList.remove("shown")
                     this.querySelector("svg").classList.remove("rotate180")
                 }
             }
@@ -43,5 +42,5 @@ const { question, answer } = Astro.props;
         }
     }
     // Tell the browser to use our AstroHeart class for <astro-heart> elements.
-    customElements.define("question", Question);
+    customElements.define("faq-question", Question);
 </script>
