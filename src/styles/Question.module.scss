@@ -1,0 +1,60 @@
+@import "fonts";
+@import "variables";
+
+$border-rad: 1em;
+question > div{
+  position: relative;
+  max-width: 40vw;
+
+  > * {
+    position: absolute;
+    border-radius: $border-rad;
+    border: .5rem solid darken($dark-purple, 3);
+    padding: 1em;
+    width:100%;
+  }
+
+  .header {
+    font-family: $inter;
+    background-color: $dark-purple;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: .6em;
+
+    button {
+      all: unset;
+      cursor: pointer;
+    }
+
+    div:has(> svg) {
+      display:flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    svg {
+      height: 2em;
+      width: auto;
+      color:$light-purple;
+    }
+
+    button:hover {
+      svg {
+        color: darken($light-purple, 5)
+      }
+    }
+  }
+
+  .answer {
+    background-color: $light-purple;
+    z-index: 1;
+    padding-top:4em;
+    display:none;
+  }
+
+  .answer .shown {
+    display:block !important;
+  }
+}

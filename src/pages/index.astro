@@ -18,7 +18,7 @@ import "../styles/main.scss"
 import Index from "../styles/index.module.scss"
 import { getImage } from "astro:assets"
 import {callEndpoint} from "astro/dist/core/endpoint";
-import IconCard from "../components/IconCard.astro";
+import Question from "../components/Question.astro";
 ---
 
 <Layout title="Home">
@@ -93,11 +93,10 @@ import IconCard from "../components/IconCard.astro";
 				<div class="pl-3 pt-2">
 					<h2>Frequently Asked Questions</h2>
 					<div class="p-4">
-						<div class={Index.question}>
-							<p>Questions 1</p>
-						</div>
+						<Question question="Question?" answer="Answwer"/>
 					</div>
 				</div>
+				<br/><br/><br/><br/>
 			</section>
 		</div>
 	</main>

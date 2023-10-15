@@ -1,0 +1,47 @@
+---
+import "../styles/main.scss"
+import Question from "../styles/Question.module.scss";
+import ShuttleArrowIcon from "./ShuttleArrowIcon.astro";
+const { question, answer } = Astro.props;
+---
+
+<question>
+    <div>
+    <div class={Question.header}>
+        <p>{question}</p>
+        <button class="question-button">
+            <div>
+                <ShuttleArrowIcon/>
+            </div>
+        </button>
+    <div class:list={[Question.answer, "answ"]}>
+        <p>{answer}</p>
+    </div>
+</div>
+    </div>
+</question>
+<script>
+    class Question extends HTMLElement {
+        constructor() {
+            super()
+        }
+        connectedCallback() {
+            console.log("D")
+            let answerShown = false;
+            const handleClick = e => {
+                console.log("clicked");
+                answerShown = !answerShown
+                if(answerShown) {
+                    this.querySelector(">div div:nth-child(2)").classList.add("shown")
+                    this.querySelector("svg").classList.add("rotate180")
+                } else {
+                    this.querySelector(">div div:nth-child(2)").classList.remove("shown")
+                    this.querySelector("svg").classList.remove("rotate180")
+                }
+            }
+            this.querySelector("button").addEventListener("click", handleClick)
+        }
+    }
+    // Tell the browser to use our AstroHeart class for <astro-heart> elements.
+    customElements.define("question", Question);
+</script>
