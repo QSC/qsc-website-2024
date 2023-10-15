@@ -81,6 +81,11 @@
     row-gap: 2rem; // You can adjust the gap between grid items as needed
     column-gap: 2rem;
 
+    @media screen and (max-width: $screen-mobile-large) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
     div:has(img) {
       grid-column: 1;
       display: flex;
