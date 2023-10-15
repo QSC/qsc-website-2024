@@ -9,6 +9,12 @@
   color: $white;
 }
 
+@media screen and (max-width: $screen-mobile-large){
+  :root {
+    font-size: 8px;
+  }
+}
+
 body {
   font-size: 2rem;
 }
