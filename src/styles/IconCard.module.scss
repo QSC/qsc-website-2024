@@ -1,6 +1,6 @@
 @import "variables";
 
-div:nth-child(1) {
+.card {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -13,12 +13,8 @@ div:nth-child(1) {
     justify-content: center;
     gap: 1rem;
     img:nth-child(1) {
-      height: 10rem;
-      width: auto;
-    }
-    img:nth-child(2) {
-      height: 12rem;
-      width: auto;
+      width: 10rem;
+      height: auto;
     }
   }
   .pointsText {

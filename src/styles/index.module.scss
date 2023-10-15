@@ -56,19 +56,101 @@
   }
 }
 
+.bgs {
+  position: absolute;
+  overflow:hidden;
+  z-index: -2;
+  max-height: 100%;
+
+  * {
+    display:block;
+  }
+}
+
 .about {
   position: relative;
   margin: 0;
   background-color: rgba($dark-purple, 90%);
-  .bgs {
-    position: absolute;
-    overflow:hidden;
-    z-index: -1;
-    max-height: 100%;
-  }
 
+  $columns: 5;
+  $rows: 4;
   .points {
+    display: grid;
+    grid-template-columns: repeat($columns, 1fr);
+    grid-template-rows: repeat($rows, 1fr);
+    row-gap: 2rem; // You can adjust the gap between grid items as needed
+    column-gap: 2rem;
 
+    div:has(img) {
+      grid-column: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+      gap: 2rem;
+
+      img {
+        height: 12rem;
+        width: auto
+      }
+    }
+
+    div:has(img):nth-child(1) {
+      img {
+        height: 8rem;
+        width: auto;
+      }
+    }
+
+    div:has(p) {
+      display: flex;
+      align-items: center;
+      grid-column-start: 2;
+      grid-column: span calc($columns - 1);
+
+      p {
+        padding: 2rem;
+        background-color: rgba($light-purple, 60%);
+        border-radius: 15px;
+      }
+    }
+  }
+}
+
+.faq {
+  background-color: rgba($light-purple, 80%);
+  position: relative;
+
+  *:has(> .watermark) {
+    overflow:hidden;
+  }
+  .watermark {
+    font-size: 35rem;
+    position: absolute;
+    font-weight: $medium-weight;
+    font-family: $inter;
+    top:-5rem;
+    left:-5rem;
+    line-height: 1em;
+    z-index: -2;
+    color: lighten($dark-purple, 20)
+  }
+
+  *:has(>.question) {
 
   }
+
+  .question {
+    font-family: $inter;
+    background-color: $dark-purple;
+    border-color: darken($dark-purple, 3);
+    padding: 2rem;
+    border-radius: 1em;
+  }
+}
+
+section {
+  display: block;
+  margin: 0;
+  padding: 0;
 }
