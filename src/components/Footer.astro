@@ -1,0 +1,57 @@
+---
+import Footer from "../styles/Footer.module.scss";
+import "../styles/main.scss"
+
+import discordIcon from "../icons/discord.svg"
+import instagramIcon from "../icons/instagram.svg"
+import facebookIcon from "../icons/facebook.svg"
+import flickrIcon from "../icons/flickr.svg"
+import githubIcon from "../icons/github.svg"
+import linkedinIcon from "../icons/linkedin.svg"
+
+---
+
+<footer class={Footer.footer}>
+    <div class={Footer.content}>
+        <p class={`sem-h-small ${Footer.altTitle}`}>QSC 2024</p>
+        <div>
+            <p class="sem-h-small">Queen's</p>
+            <div class={Footer.icons}>
+                <div>
+                    <a href="https://www.instagram.com/queensspace/"><img src={instagramIcon.src} alt="instagram icon"/></a>
+                </div>
+
+                <div>
+                    <a href="https://www.instagram.com/queensspace/"><img src={discordIcon.src} alt="discord icon"/></a>
+                </div>
+
+                <div>
+                    <a href="https://www.instagram.com/queensspace/"><img src={linkedinIcon.src} alt="linkedin icon"/></a>
+                </div>
+
+                <div>
+                    <a href="https://www.instagram.com/queensspace/"><img src={githubIcon.src} alt="github icon"/></a>
+                </div>
+
+                <div>
+                    <a href="https://www.instagram.com/queensspace/"><img src={flickrIcon.src} alt="flickr icon"/></a>
+                </div>
+
+                <div>
+                    <a href="https://www.instagram.com/queensspace/"><img src={facebookIcon.src} alt="facebook icon"/></a>
+                </div>
+            </div>
+        </div>
+        <div>
+            <p class="sem-h-small">Space</p>
+            <p>February 3rd-4th</p>
+            <p>Kingston, Ontario</p>
+        </div>
+        <div>
+            <p class="sem-h-small">Conference </p>
+        </div>
+    </div>
+    <div class={Footer.copyright}>
+        <p>© 2023-2024 Copyright Queen's Space Conference: All Rights Reserved</p>
+    </div>
+</footer>

@@ -19,6 +19,7 @@ import Index from "../styles/index.module.scss"
 import { getImage } from "astro:assets"
 import {callEndpoint} from "astro/dist/core/endpoint";
 import Question from "../components/Question.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <Layout title="Home">
@@ -66,14 +67,14 @@ import Question from "../components/Question.astro";
 							<img src={speakerIcon.src} alt="an icon of speaker at a podium">
 						</div>
 						<div>
-							<p>We strive to bring together industry professionals in order to provide delegates the most informative, inspiring, and memorable conference possible. A range of 5-7 speakers will talk about their role in the space industry, their contributions, and where we are headed. The talks tend to vary in technical detail and the bigger picture, and thus are suited for a range of backgrounds and interests</p>
+							<p>We strive to bring together industry professionals in order to provide delegates the most informative, inspiring, and memorable conference possible. A range of 5-7 speakers will talk about their role in the space industry, their contributions, and where we are headed. The talks tend to vary in technical detail and the bigger picture, and thus are suited for a range of backgrounds and interests. Past speakers include CEOs, engineers, astrophysicist, astronauts, AI specialists, and more. More information about our past speakers will be posted on this website soon!</p>
 						</div>
 
 						<div>
 							<img src={networkingIcon.src} alt="an icon of a map pin">
 						</div>
 						<div>
-							<p>We provide networking opportunities with our speakers and their respective organizations, as well as with our cosponsors, other students, and all other delegates. There will be a networking showcase with booths set up representing extracurriculars, research opportunities, and related companies.</p>
+							<p>We provide networking opportunities with our speakers and their respective organizations, as well as with our cosponsors, other students, and all other delegates. There will be a networking showcase with booths set up representing extracurriculars, research opportunities, and space-related companies at our conference.</p>
 						</div>
 
 						<div>
@@ -81,7 +82,7 @@ import Question from "../components/Question.astro";
 						</div>
 						<div>
 							<p>
-								QSC is about sparking thought and idea-generation, connecting our delegates with those who can launch them towards their goals, and spreading education and love for space. QSC is an opportunity to learn, grow, connect, and
+								QSC is about sparking thought and idea-generation, connecting our delegates with those who can launch them towards their goals, and spreading education and love for space. QSC is an opportunity to learn, grow, and connect meaningfully.
 							</p>
 						</div>
 
@@ -93,15 +94,15 @@ import Question from "../components/Question.astro";
 				<div class="pl-3 pt-2">
 					<h2>Frequently Asked Questions</h2>
 					<div class="p-4">
-						<Question question="Question?" answer="Answwer"/>
-						<Question question="Question?" answer="Answwer"/>
+						<Question question="What is a case competition? " answer=" Case competitions are named so as they are case studies of tangible, real world scenarios. Participants will be given a prompt and, within an allocated time frame, strive to develop a solution or plan with their team, followed by a presentation.  "/>
+						<Question question="Do you have to be a Queen’s student to come to the conference? " answer="No, you do not! Students from everywhere are welcome and encouraged to come to the Queen’s Space Conference. "/>
 						<Question question="Question?" answer="Answwer"/>
 						<Question question="Question?" answer="Answwer"/>
 						<Question question="Question?" answer="Answwer"/>
 					</div>
 				</div>
-				<br/><br/><br/><br/>
 			</section>
 		</div>
 	</main>
+	<Footer/>
 </Layout>

@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&family=Orbitron:wght@400;500&family=Quicksand&display=swap");
+faq-question {
+  position: relative;
+  display: block;
+  max-width: 50vw;
+  background-color: #8970E0;
+  border-radius: 1em;
+  box-shadow: inset 0px 0px 0px 10px #1a1f42;
+}
+faq-question .header {
+  font-family: "Inter", sans-serif;
+  background-color: #1E244D;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1em;
+  border-radius: 1em;
+  border: 1rem solid #1a1f42;
+  width: 100%;
+}
+faq-question .header button {
+  all: unset;
+  cursor: pointer;
+}
+faq-question .header div:has(> svg) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+faq-question .header svg {
+  height: 2em;
+  width: auto;
+  color: #8970E0;
+}
+faq-question .header button:hover svg {
+  color: #785bdb;
+}
+faq-question .answer {
+  display: none;
+  padding: 1.5em;
+}
+
+/*# sourceMappingURL=Question.module.css.map */

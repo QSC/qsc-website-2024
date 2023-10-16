@@ -1,6 +1,9 @@
 @import "fonts";
 @import "variables";
 
+$about-bg: rgba($dark-purple, 90%);
+$faq-bg: rgba($light-purple, 80%);
+
 .hero {
   background-image: url("../images/spacebg.png");
   display: flex;
@@ -70,9 +73,10 @@
 .about {
   position: relative;
   margin: 0;
-  background-color: rgba($dark-purple, 90%);
+  background-color: $about-bg;
+  //background: linear-gradient(to bottom, $about-bg 95%, $faq-bg 100%);
 
-  $columns: 5;
+$columns: 5;
   $rows: 4;
   .points {
     display: grid;
@@ -123,7 +127,8 @@
 }
 
 .faq {
-  background-color: rgba($light-purple, 80%);
+  background-color: $faq-bg;
+  //background: linear-gradient(to bottom, $about-bg 5%, $faq-bg 10%);
   position: relative;
   z-index: 0;
   overflow: hidden;
@@ -136,10 +141,6 @@
     z-index: 2;
   }
 
-  *:has(> .watermark) {
-    overflow:hidden;
-  }
-
   .watermark {
     font-size: 50rem;
     position: absolute;
@@ -149,11 +150,17 @@
     left:-5rem;
     line-height: 1em;
     z-index: 1;
-    color: rgba(darken($light-purple,2), 80%);;
+    color: rgba(lighten($dark-purple,6), 80%);;
   }
 
-  *:has(>.question) {
+  *:has(>faq-question) {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
 
+    @media screen and (max-width: $screen-mobile-large) {
+    //  align-items: center;
+    }
   }
 }
 
