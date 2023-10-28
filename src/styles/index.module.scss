@@ -129,51 +129,42 @@ $faq-bg: rgba($light-purple, 80%);
   background-color: $about-bg;
   //background: linear-gradient(to bottom, $about-bg 95%, $faq-bg 100%);
 
-  $columns: 5;
-  $rows: 4;
   .points {
-    display: grid;
-    grid-template-columns: repeat($columns, 1fr);
-    grid-template-rows: repeat($rows, 1fr);
-    row-gap: 2rem; // You can adjust the gap between grid items as needed
-    column-gap: 2rem;
-    max-width: 60%;
+    --l-padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
 
-    @media screen and (max-width: $screen-mobile-large) {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+    > div {
 
     }
-    div:has(img) {
-      grid-column: 1;
+
+    h3 {
+      font-family: $quicksand;
+      font-weight: $regular-weight;
+      margin-left: var(--l-padding);
+    }
+
+    div:has(> img) {
       display: flex;
-      justify-content: center;
+      justify-content: left;
       align-items: center;
       padding: 1rem;
       gap: 2rem;
-
-      img {
-        height: 12rem;
-        width: auto
-      }
+      margin-left: var(--l-padding);
     }
 
-    div:has(img):nth-child(1) {
+    //div with the map and calendar
+  div:has(> img) {
       img {
         height: 8rem;
         width: auto;
       }
     }
 
-    div:has(p) {
-      display: flex;
-      align-items: center;
-      grid-column-start: 2;
-      grid-column: span calc($columns - 1);
-
+    div:has(>p) {
       p {
-        padding: 2rem;
+        padding: var(--l-padding);
         background-color: rgba($light-purple, 60%);
         border-radius: 15px;
       }
