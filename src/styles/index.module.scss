@@ -6,6 +6,7 @@ $faq-bg: rgba($light-purple, 80%);
 
 .hero {
   background-image: url("../images/spacebg.png");
+  background-attachment: fixed;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -24,7 +25,10 @@ $faq-bg: rgba($light-purple, 80%);
     display: flex;
     flex-direction: row;
     flex-basis: 100%;
-    justify-content: center;
+    justify-content: space-evenly;
+    @media screen and (max-width: $screen-mobile-large) {
+      justify-content: center;
+    }
     gap: 3rem;
     align-items: center;
     flex-wrap: wrap;
@@ -35,15 +39,52 @@ $faq-bg: rgba($light-purple, 80%);
       justify-content: center;
     }
 
-    .heading-div {
-      display: flex;
-      align-items: center;
+    .heroTitleBox {
+      .heroTitle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        h1 {
+          @media screen and (max-width: $screen-mobile-large){
+            font-size: 4rem;
+            line-height: 2em;
+          }
+        }
+      }
+      .tickets {
+        color: darken($light-purple,4);
+        margin-top: 1em;
+        a {
+          font-size: 2.5em;
+          background-color: rgba($dark-purple, 40%);
+          font-family: $quicksand;
+          font-weight: $regular-weight;
+          border: .5rem solid rgba($light-purple, 40%);
+          border-radius: 1rem;
+          padding-inline: .3em;
+          text-decoration: none;
+          color:inherit;
+        }
+        a:hover, a:focus {
+          color: lighten($light-purple, 2);
+          font-weight: $medium-weight;
+          background-color: rgba(lighten($dark-purple,10), 40%);
+        }
+      }
     }
   }
 
   .bottom {
     background-color: rgba($light-purple, 40%);
     font-size: 2.5rem;
+    display: flex;
+    font-weight: $heavy-weight;
+    padding: 1em;
+    justify-content: space-evenly;
+    @media screen and (max-width: $screen-mobile-large) {
+      flex-direction: column;
+    }
   }
 
   @media screen and (max-width: $screen-mobile-large) {
@@ -76,7 +117,7 @@ $faq-bg: rgba($light-purple, 80%);
   background-color: $about-bg;
   //background: linear-gradient(to bottom, $about-bg 95%, $faq-bg 100%);
 
-$columns: 5;
+  $columns: 5;
   $rows: 4;
   .points {
     display: grid;
@@ -84,11 +125,13 @@ $columns: 5;
     grid-template-rows: repeat($rows, 1fr);
     row-gap: 2rem; // You can adjust the gap between grid items as needed
     column-gap: 2rem;
+    max-width: 60%;
 
     @media screen and (max-width: $screen-mobile-large) {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
+
     }
     div:has(img) {
       grid-column: 1;

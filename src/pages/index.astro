@@ -30,14 +30,21 @@ import Footer from "../components/Footer.astro";
 					<div class={Index.logoContainer}>
 						<Image src={logoImage} alt="Queen's Space Conference Logo" style="height: auto; width: 50rem; object-fit: cover";/>
 					</div>
-					<div class={Index.headingDiv}>
-						<h1>Inspiring; <br/> Educating; <br/> Connecting.</h1>
+					<div class={Index.heroTitleBox}>
+						<div class={Index.heroTitle}>
+							<h1>Inspiring; <br/> <span class="light-purple">Educating;</span> <br/> Connecting.</h1>
+						</div>
+						<div class={Index.tickets}>
+							<a target="_blank" href="https://www.engsoc.queensu.ca/shop/">Buy Tickets</a>
+						</div>
+
 					</div>
 				</div>
 			</div>
 			<div  class={`center p-2 mt-1 ${Index.bottom}`}>
-				<p class="sem-h-small mb-1">Queen's Space Conference 2024</p>
-				<p>Connecting students with leaders in the space industry for over a decade</p>
+				<p class="sem-h-small">QSC 2024</p>
+				<p class="sem-h-small">Feb. 3rd-4th</p>
+				<p class="sem-h-small">Kingston, Ontario</p>
 			</div>
 		</section>
 
@@ -94,9 +101,18 @@ import Footer from "../components/Footer.astro";
 				<div class="pl-3 pt-2">
 					<h2>Frequently Asked Questions</h2>
 					<div class="p-4">
-						<Question question="What is a case competition? " answer=" Case competitions are named so as they are case studies of tangible, real world scenarios. Participants will be given a prompt and, within an allocated time frame, strive to develop a solution or plan with their team, followed by a presentation.  "/>
-						<Question question="Do you have to be a Queen’s student to come to the conference? " answer="No, you do not! Students from everywhere are welcome and encouraged to come to the Queen’s Space Conference. "/>
-						<Question question="Question?" answer="Answwer"/>
+						<Question question="What is a case competition?">
+							<p>Case competitions are case studies of tangible, real world scenarios. Delegates will be placed into groups that will work together on solving a proposed issue/problem. Within an allocated time frame, delegates will strive to develop a solution or plan with their team, followed by a presentation at the conference. Case competitions are a fun way to exercise your mind and problem solving abilities while working with other like-minded people, while also competing agaisnt other groups.</p>
+						</Question>
+
+						<Question question="Do you have to be a Queen’s student to come to the conference?">
+							<p>No, you do not! Students from everywhere are welcome and encouraged to come to the Queen’s Space Conference.
+							</p>
+						</Question>
+
+						<Question question="How can I sponsor QSC?">
+							<p>Thank you for considering sponsoring the 2024 Queen's Space Conference! Please reach out to <a href="emailto:qsc.sponsorships@engsoc.queensu.ca">qsc.sponsorships@engsoc.queensu.ca</a></p>
+						</Question>
 						<Question question="Question?" answer="Answwer"/>
 						<Question question="Question?" answer="Answwer"/>
 					</div>

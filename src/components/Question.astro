@@ -2,7 +2,7 @@
 import "../styles/main.scss"
 import Question from "../styles/Question.module.scss";
 import ShuttleArrowIcon from "./ShuttleArrowIcon.astro";
-const { question, answer } = Astro.props;
+const { question } = Astro.props;
 ---
 
 <faq-question>
@@ -15,26 +15,47 @@ const { question, answer } = Astro.props;
         </button>
     </div>
 
-    <div id="question-answer" class:list={[Question.answer]}>
-        <p>{answer}</p>
+    <div aria-hidden="true" class="faq-answer">
+        <slot/>
     </div>
 </faq-question>
 <script>
     class Question extends HTMLElement {
+        static count = 0
+        answerShown = false
+
         constructor() {
             super()
         }
         connectedCallback() {
-            console.log("D")
-            let answerShown = false;
+            Question.count += 1
+
+            const btn =  this.querySelector(".question-button")
+            let q_id = `faq-answer${Question.count}`
+            btn["aria-controls"] = q_id
+            btn.ariaExpanded = "false"
+
+            const answ =  this.querySelector(".faq-answer")
+            answ.id = q_id
+
             const handleClick = e => {
-                console.log("clicked");
-                answerShown = !answerShown
-                if(answerShown) {
-                    this.querySelector("#question-answer").classList.add("shown")
+                this.answerShown = !this.answerShown
+                const answ =  this.querySelector(".faq-answer")
+                const btn =  this.querySelector(".question-button")
+
+                if(this.answerShown) {
+                    answ.classList.add("shown")
+                    answ.ariaHidden = "false"
+
+                    btn.ariaExpanded = "true"
+
                     this.querySelector("svg").classList.add("rotate180")
                 } else {
-                    this.querySelector("#question-answer").classList.remove("shown")
+                    answ.classList.remove("shown")
+                    answ.ariaHidden = "true"
+
+                    btn.ariaExpanded = "false"
+
                     this.querySelector("svg").classList.remove("rotate180")
                 }
             }

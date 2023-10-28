@@ -1,11 +1,16 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter&family=Orbitron:wght@400;500&family=Quicksand&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter&family=Orbitron:wght@400;500&family=Quicksand:wght@400;500;600;700&display=swap");
 faq-question {
   position: relative;
   display: block;
-  max-width: 50vw;
   background-color: #8970E0;
   border-radius: 1em;
+  max-width: 50vw;
   box-shadow: inset 0px 0px 0px 10px #1a1f42;
+}
+@media screen and (max-width: 768px) {
+  faq-question {
+    max-width: 80vw;
+  }
 }
 faq-question .header {
   font-family: "Inter", sans-serif;
@@ -18,10 +23,14 @@ faq-question .header {
   border-radius: 1em;
   border: 1rem solid #1a1f42;
   width: 100%;
+  gap: 1em;
 }
 faq-question .header button {
   all: unset;
   cursor: pointer;
+}
+faq-question .header button:focus {
+  outline: #8970E0 solid 3px;
 }
 faq-question .header div:has(> svg) {
   display: flex;
@@ -35,10 +44,6 @@ faq-question .header svg {
 }
 faq-question .header button:hover svg {
   color: #785bdb;
-}
-faq-question .answer {
-  display: none;
-  padding: 1.5em;
 }
 
 /*# sourceMappingURL=Question.module.css.map */

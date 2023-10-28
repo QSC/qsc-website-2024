@@ -1,5 +1,5 @@
 /* Credit : https://github.com/fraserboag/sass-reset */
-@import url("https://fonts.googleapis.com/css2?family=Inter&family=Orbitron:wght@400;500&family=Quicksand&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter&family=Orbitron:wght@400;500&family=Quicksand:wght@400;500;600;700&display=swap");
 :root {
   font-size: 10px;
 }
@@ -331,16 +331,11 @@ input {
 }
 
 :root {
-  font-size: 10px;
+  font-size: max(0.703125vw, 8px);
   font-family: "Quicksand", sans-serif;
   color: #D3E5FF;
 }
 
-@media screen and (max-width: 768px) {
-  :root {
-    font-size: 8px;
-  }
-}
 body {
   font-size: 2rem;
 }
@@ -381,6 +376,29 @@ h2 {
 
 .shown {
   display: block !important;
+}
+
+.light-purple {
+  color: #8970E0 !important;
+}
+
+.light-purple-d3 {
+  color: #8268de !important;
+}
+
+.dark-purple {
+  color: #1E244D !important;
+}
+
+.faq-answer {
+  display: none;
+  padding: 1.5em;
+}
+.faq-answer a {
+  color: #1E244D;
+}
+.faq-answer a:hover {
+  color: #D3E5FF;
 }
 
 /*# sourceMappingURL=main.css.map */

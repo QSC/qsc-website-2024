@@ -4,16 +4,22 @@
 @import "spacing";
 
 :root {
-  font-size: 10px;
+  font-size: max(calc(900vw / 1280), 8px);
   font-family: $quicksand;
   color: $white;
 }
 
-@media screen and (max-width: $screen-mobile-large){
-  :root {
-    font-size: 8px;
-  }
-}
+//@media screen and (max-width: $screen-mobile-large){
+//  :root {
+//    font-size: 8px;
+//  }
+//}
+//
+//@media screen and (min-width: $screen-mobile-large) {
+//  :root {
+//    font-size: 15px;
+//  }
+//}
 
 body {
   font-size: 2rem;
@@ -53,4 +59,26 @@ h2 {
 }
 .shown {
   display: block !important;
+}
+.light-purple {
+  color: $light-purple !important;
+}
+.light-purple-d3 {
+  color: darken($light-purple,2) !important;
+}
+
+.dark-purple {
+  color: $dark-purple !important;
+}
+.faq-answer {
+  display:none;
+  padding: 1.5em;
+
+  a {
+    color: $dark-purple;
+
+  }
+  a:hover {
+    color: $white;
+  }
 }

@@ -1,6 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter&family=Orbitron:wght@400;500&family=Quicksand&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter&family=Orbitron:wght@400;500&family=Quicksand:wght@400;500;600;700&display=swap");
 .hero {
   background-image: url("../images/spacebg.png");
+  background-attachment: fixed;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -18,23 +19,64 @@
   display: flex;
   flex-direction: row;
   flex-basis: 100%;
-  justify-content: center;
+  justify-content: space-evenly;
   gap: 3rem;
   align-items: center;
   flex-wrap: wrap;
+}
+@media screen and (max-width: 768px) {
+  .hero .top > div {
+    justify-content: center;
+  }
 }
 .hero .top > div .logo-container {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.hero .top > div .heading-div {
+.hero .top > div .heroTitleBox .heroTitle {
   display: flex;
   align-items: center;
+  justify-content: center;
+}
+@media screen and (max-width: 768px) {
+  .hero .top > div .heroTitleBox .heroTitle h1 {
+    font-size: 4rem;
+    line-height: 2em;
+  }
+}
+.hero .top > div .heroTitleBox .tickets {
+  color: #7b5fdc;
+  margin-top: 1em;
+}
+.hero .top > div .heroTitleBox .tickets a {
+  font-size: 2.5em;
+  background-color: rgba(30, 36, 77, 0.4);
+  font-family: "Quicksand", sans-serif;
+  font-weight: 400;
+  border: 0.5rem solid rgba(137, 112, 224, 0.4);
+  border-radius: 1rem;
+  padding-inline: 0.3em;
+  text-decoration: none;
+  color: inherit;
+}
+.hero .top > div .heroTitleBox .tickets a:hover, .hero .top > div .heroTitleBox .tickets a:focus {
+  color: #9078e2;
+  font-weight: 500;
+  background-color: rgba(44, 53, 114, 0.4);
 }
 .hero .bottom {
   background-color: rgba(137, 112, 224, 0.4);
   font-size: 2.5rem;
+  display: flex;
+  font-weight: 600;
+  padding: 1em;
+  justify-content: space-evenly;
+}
+@media screen and (max-width: 768px) {
+  .hero .bottom {
+    flex-direction: column;
+  }
 }
 @media screen and (max-width: 768px) {
   .hero img {
@@ -68,6 +110,7 @@
   grid-template-rows: repeat(4, 1fr);
   row-gap: 2rem;
   column-gap: 2rem;
+  max-width: 60%;
 }
 @media screen and (max-width: 768px) {
   .about .points {
