@@ -67,14 +67,24 @@
 }
 .hero .bottom {
   background-color: rgba(137, 112, 224, 0.4);
-  font-size: 2.5rem;
-  display: flex;
-  font-weight: 600;
   padding: 1em;
-  justify-content: space-evenly;
+  padding-inline: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hero .bottom div {
+  display: flex;
+  font-size: 2.5rem;
+  font-weight: 600;
+  flex-grow: 1;
+  justify-content: center;
+}
+.hero .bottom div > * {
+  margin: 0 auto;
 }
 @media screen and (max-width: 768px) {
-  .hero .bottom {
+  .hero .bottom div {
     flex-direction: column;
   }
 }
