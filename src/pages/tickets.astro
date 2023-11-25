@@ -1,0 +1,51 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Tickets from "../styles/tickets.module.scss"
+---
+<Layout title="Tickets">
+    <meta slot="meta" name="description" content="Buy tickets for Queen's Space Conference (QSC) 2024! Ticket prices are $75 for a full, two-day ticket, and $50 for a one-day ticket. QSC is an annual space conference held in Kingston, Ontario. The conference is centered around a series of exciting talks from professionals in the space spector, innovative workshops, and networking opportunities. Come to QSC 2024 on Febuary 3rd and Febuary 4th to learn about all things space." />
+    <meta slot="meta" property="og:title" content="Home - Queen's Space Conference">
+    <meta slot="meta" property="og:description" content="Buy tickets for Queen's Space Conference (QSC) 2024! Ticket prices are $75 for a full, two-day ticket, and $50 for a one-day ticket. QSC is an annual space conference held in Kingston, Ontario. The conference is centered around a series of exciting talks from professionals in the space spector, innovative workshops, and networking opportunities. Come to QSC 2024 on Febuary 3rd and Febuary 4th to learn about all things space.">
+    <meta slot="meta" property="og:url" content="https://www.qsconference.ca/tickets">
+    <meta slot="meta" property="og:image" content="https://www.qsconference.ca/qsc_logo.png">
+    <meta slot="meta" property="og:type" content="website">
+    <meta slot="meta" property="og:site_name" content="Queen's Space Conference">
+
+    <main slot="content" class={Tickets.main}>
+        <div>
+            <h1>Tickets</h1>
+            <div class={Tickets.cards}>
+                <div>
+                    <div class={Tickets.card}>
+                        <h2>One Day Ticket</h2>
+                        <p class={Tickets.price}>$50</p>
+                        <p class={Tickets.date}>Only Saturday, February 3rd</p>
+                        <ul>
+                            <li>4 speakers (including keynote speaker)</li>
+                            <li>Case competition</li>
+                            <li>Student fair</li>
+                            <li>Social at Clark Hall Pub at night  (with drink tickets!)</li>
+                            <li>Lunch and dinner</li>
+                        </ul>
+                        <a href="https://www.engsoc.queensu.ca/product/queens-space-conference-delegate-ticket-one-day/">Buy One-Day Ticket</a>
+                    </div>
+                </div>
+                <div>
+                    <div class={Tickets.card}>
+                        <h2>Full Ticket</h2>
+                        <p class={Tickets.price}>$75</p>
+                        <p class={Tickets.date}>Both February 3rd and 4th (Saturday and Sunday)</p>
+                        <ul>
+                            <li>7 speakers (4 speakers on Saturday, including keynote speaker, and 3 speakers on Sunday)</li>
+                            <li>Case competition (Saturday)</li>
+                            <li>Student fair (Saturday)</li>
+                            <li>Social at Clark Hall Pub on Saturday night (with drink tickets!)</li>
+                            <li>Lunch and dinner on Saturday, breakfast on Sunday</li>
+                        </ul>
+                        <a href="https://www.engsoc.queensu.ca/product/queens-space-conference-delegate-ticket-two-days/">Buy Full Ticket</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</Layout>

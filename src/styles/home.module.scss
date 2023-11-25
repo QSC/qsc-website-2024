@@ -4,15 +4,23 @@
 $about-bg: rgba($dark-purple, 90%);
 $faq-bg: rgba($light-purple, 80%);
 
-.hero {
+main:has(.hero) {
   background-image: url("../images/spacebg.png");
   background-attachment: fixed;
+  background-size: cover;
+}
+
+.hero {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 100vh;
+  min-height: calc(100vh - var(--navbar-height));
   overflow: hidden;
+  position:relative;
 
+  >* {
+    z-index: 1;
+  }
   .top {
     display: flex;
     flex-direction: row;
@@ -44,7 +52,7 @@ $faq-bg: rgba($light-purple, 80%);
         display: flex;
         align-items: center;
         justify-content: center;
-
+        position: relative;
         h1 {
           @media screen and (max-width: $screen-mobile-large){
             font-size: 4rem;
@@ -77,13 +85,25 @@ $faq-bg: rgba($light-purple, 80%);
 
   .bottom {
     background-color: rgba($light-purple, 40%);
-    font-size: 2.5rem;
-    display: flex;
-    font-weight: $heavy-weight;
     padding: 1em;
-    justify-content: space-evenly;
-    @media screen and (max-width: $screen-mobile-large) {
-      flex-direction: column;
+    padding-inline: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    div {
+      display: flex;
+      font-size: 2.5rem;
+      font-weight: $heavy-weight;
+      flex-grow: 1;
+      justify-content: center;
+
+      > * {
+          margin: 0 auto;
+      }
+      @media screen and (max-width: $screen-mobile-large) {
+        flex-direction: column;
+      }
     }
   }
 
@@ -100,10 +120,22 @@ $faq-bg: rgba($light-purple, 80%);
   }
 }
 
+// black to cover the bg image to make text readable
+.hero::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width:100%;
+    height:100%;
+    background-color: rgba(0 0 0 / .30);
+    z-index: 0;
+    content:"";
+}
+
 .bgs {
   position: absolute;
   overflow:hidden;
-  z-index: -1;
+  z-index: 0;
   max-height: 100%;
 
   * {
@@ -117,53 +149,61 @@ $faq-bg: rgba($light-purple, 80%);
   background-color: $about-bg;
   //background: linear-gradient(to bottom, $about-bg 95%, $faq-bg 100%);
 
-  $columns: 5;
-  $rows: 4;
   .points {
-    display: grid;
-    grid-template-columns: repeat($columns, 1fr);
-    grid-template-rows: repeat($rows, 1fr);
-    row-gap: 2rem; // You can adjust the gap between grid items as needed
-    column-gap: 2rem;
-    max-width: 60%;
+    --l-padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    align-items: center;
 
-    @media screen and (max-width: $screen-mobile-large) {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+    > div {
 
     }
-    div:has(img) {
-      grid-column: 1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 1rem;
-      gap: 2rem;
 
-      img {
-        height: 12rem;
-        width: auto
+    h3 {
+      font-family: $quicksand;
+      font-weight: $regular-weight;
+      margin-left: var(--l-padding);
+      @media screen and (max-width: $screen-mobile-large) {
+        text-align: center;
       }
     }
 
-    div:has(img):nth-child(1) {
+    div:has(> img) {
+      display: flex;
+      justify-content: left;
+      align-items: center;
+      padding: 1rem;
+      gap: 2rem;
+      margin-left: var(--l-padding);
+      @media screen and (max-width: $screen-mobile-large) {
+        justify-content: center;
+      }
+    }
+
+    //div with the map and calendar
+    div:has(> img) {
       img {
         height: 8rem;
         width: auto;
       }
     }
 
-    div:has(p) {
-      display: flex;
-      align-items: center;
-      grid-column-start: 2;
-      grid-column: span calc($columns - 1);
-
+    div:has(>p) {
       p {
-        padding: 2rem;
-        background-color: rgba($light-purple, 60%);
+        padding: var(--l-padding);
+        background-color: rgba(darken($light-purple,2), 60%);
         border-radius: 15px;
+        max-width:80%;
+
+        .em {
+          color: black;
+          font-weight: $heavy-weight;
+        }
+      }
+      @media screen and (max-width: $screen-mobile-large) {
+        display:flex;
+        justify-content: center;
       }
     }
   }

@@ -1,0 +1,159 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import logoImage from "../images/qsc_logo_outlined_cropped.png";
+import bg1 from "../images/bg/speaker_1.jpg";
+import bg2 from "../images/bg/case_comp.jpeg";
+import bg3 from "../images/bg/speaker_2.jpg";
+import bg4 from "../images/bg/case_comp_1.jpg";
+import bg5 from "../images/bg/speaker_3.jpg";
+
+import locationIcon from "../icons/location.svg"
+import calendarIcon from "../icons/calendar.svg"
+import speakerIcon from "../icons/speaker.svg"
+import networkingIcon from "../icons/networking.svg"
+import shuttleIcon from "../icons/space-shuttle.svg"
+import astronautIcon from "../images/astronaut_icon.png"
+
+import "../styles/main.scss"
+import Home from "../styles/home.module.scss"
+import { getImage } from "astro:assets"
+import {callEndpoint} from "astro/dist/core/endpoint";
+import Question from "../components/Question.astro";
+---
+<Layout title="Home">
+	<meta slot="meta" name="description" content="The Queen's Space Conference (QSC) is an annual space conference held in Kingston, Ontario. The conference is centered around a series of exciting talks from professionals in the space spector, innovative workshops, and networking opportunities. Come to QSC 2024 on Febuary 3rd and Febuary 4th to learn about all things space." />
+	<meta slot="meta" property="og:title" content="Home - Queen's Space Conference">
+	<meta slot="meta" property="og:description" content="The Queen's Space Conference (QSC) is an annual space conference held in Kingston, Ontario. The conference is centered around a series of exciting talks from professionals in the space spector, innovative workshops, and networking opportunities. Come to QSC 2024 on Febuary 3rd and Febuary 4th to learn about all things space.">
+	<meta slot="meta" property="og:url" content="https://www.qsconference.ca">
+	<meta slot="meta" property="og:image" content="https://www.qsconference.ca/qsc_logo.png">
+	<meta slot="meta" property="og:type" content="website">
+	<meta slot="meta" property="og:site_name" content="Queen's Space Conference">
+
+	<main slot="content">
+		<section class={Home.hero}>
+			<div class={Home.top}>
+				<div>
+					<div class={Home.logoContainer}>
+						<Image src={logoImage} alt="Queen's Space Conference Logo" style="height: auto; width: 50rem; object-fit: cover";/>
+					</div>
+					<div class={Home.heroTitleBox}>
+						<div class={Home.heroTitle}>
+							<h1>Inspiring; <br/> <span class="light-purple">Educating;</span> <br/> Connecting.</h1>
+						</div>
+						<div>
+							<p>Queen's Space Conference 2024</p>
+						</div>
+						<div class={Home.tickets}>
+							<a target="_blank" href="https://www.engsoc.queensu.ca/shop/">Buy Tickets</a>
+						</div>
+
+					</div>
+				</div>
+			</div>
+			<div  class={`center p-2 mt-1 ${Home.bottom}`}>
+				<div>
+					<p class="sem-h-small">QSC 2024</p>
+					<p class="sem-h-small">Feb. 3rd-4th</p>
+					<p class="sem-h-small">Kingston, Ontario</p>
+				</div>
+			</div>
+		</section>
+
+		<div style="position:relative;" aria-hidden="true">
+			<div class={Home.bgs} >
+				<Image src={bg1} alt="bg image" style="width: 100%; height: auto; object-fit: contain"/>
+				<Image src={bg2} alt="bg image" style="width: 100%; height: auto; object-fit: contain"/>
+				<Image src={bg3} alt="bg image" style="width: 100%; height: auto; object-fit: contain"/>
+				<Image src={bg4} alt="bg image" style="width: 100%; height: auto; object-fit: contain"/>
+				<Image src={bg5} alt="bg image" style="width: 100%; height: auto; object-fit: contain"/>
+			</div>
+
+			<section class={Home.about}>
+				<div class="pl-3 pr-3 pt-2">
+					<h2>What is QSC?</h2>
+
+					<div class:list={["p-5", `${Home.points}`]}>
+						<div>
+							<div>
+								<img src={locationIcon.src} alt="an icon of a map pin">
+								<img src={calendarIcon.src} alt="an icon of a calendar">
+							</div>
+							<div>
+								<h3>Feb. 3rd-4th | Kingston, Ontario</h3>
+							</div>
+							<div>
+								<p>The conference will span two days, starting on February 3rd and ending the evening of the 4th. It will include presentations from speakers, a case competition, an networking fair, a social, and more opportunities to connect with others at the conference.</p>
+							</div>
+						</div>
+
+						<div>
+							<div>
+								<Image src={astronautIcon} alt="astronaut"/>
+								<img id="podium" src={speakerIcon.src} alt="an icon of speaker at a podium">
+							</div>
+							<div>
+								<h3>7 Speakers</h3>
+							</div>
+							<div>
+								<p>We bring <span class={Home.em}>industry professionals</span> to our conference in order to provide delegates the most informative, inspiring, and memorable conference possible. Seven speakers will talk about their role in the space industry, their contributions, and where we are headed. Past speakers include CEOs, engineers, astrophysicists, astronauts, AI specialists, and more. More information about our past speakers will be posted on this website soon!</p>
+							</div>
+						</div>
+
+						<div>
+							<div>
+								<img src={networkingIcon.src} alt="an icon of 3 people">
+							</div>
+							<div>
+								<h3>Networking</h3>
+							</div>
+							<div>
+								<p>We provide networking opportunities with our speakers and their respective organizations, as well as with our cosponsors, other students, and all other delegates. There will be a networking showcase with booths set up representing extracurriculars, research opportunities, and space-related companies at our conference.</p>
+							</div>
+						</div>
+
+						<div>
+							<div>
+								<img class="rotate45" src={shuttleIcon.src} alt="an icon of a map pin">
+							</div>
+							<div>
+								<h3>Blast off!</h3>
+							</div>
+							<div>
+								<p>
+									QSC is about sparking thought and idea-generation, connecting our delegates with those who can launch them towards their goals, and spreading education and love for space. QSC is an opportunity to learn, grow, and connect meaningfully. Explore your passions and interests at QSC 2024.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class={Home.faq}>
+				<div class={Home.watermark} aria-hidden="true">?</div>
+				<div class="pl-3 pt-2">
+					<h2>Frequently Asked Questions</h2>
+					<div class="p-4">
+						<Question question="Do you have to be a Queen’s student to come to the conference?">
+							<p>No, you do not! Students from everywhere are welcome and encouraged to come to the Queen’s Space Conference.
+							</p>
+						</Question>
+
+						<Question question="What is a case competition?">
+							<p>Case competitions are case studies of tangible, real world scenarios. Delegates will be placed into groups that will work together on solving a proposed issue/problem. Within an allocated time frame, delegates will strive to develop a solution or plan with their team, followed by a presentation at the conference. Case competitions are a fun way to exercise your mind and problem solving abilities while working with other like-minded people, while also competing against other groups. Past case comps have covered topics such as cleaning up space debris, mining asteroids, and more.</p>
+						</Question>
+
+						<Question question="How can I sponsor QSC?">
+							<p>Thank you for considering sponsoring the 2024 Queen's Space Conference! Please check out our sponsorship package <a href="https://qsconference.ca/Sponsorship%20Package.pdf">HERE</a> and reach out to <a href="emailto:qsc.sponsorships@engsoc.queensu.ca">qsc.sponsorships@engsoc.queensu.ca</a> for more information.</p>
+						</Question>
+
+						<Question question="I have a question. Who do I ask?">
+							<p>If you have a question about sponsoring please contact: <a href="emailto:qsc.sponsorships@engsoc.queensu.ca">qsc.sponsorships@engsoc.queensu.ca</a></p>
+							<p>If you have a question about attending the conference please contact: <a href="emailto:qsc.delegates@engsoc.queensu.ca">qsc.delegates@engsoc.queensu.ca</a></p>
+							<p>There will also be a discord server for QSC 2024 to ask questions and connect with the QSC team and other delegates soon--keep your eyes posted for that!</p>
+						</Question>
+					</div>
+				</div>
+			</section>
+		</div>
+	</main>
+</Layout>
