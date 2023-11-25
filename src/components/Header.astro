@@ -1,0 +1,65 @@
+---
+import Header from "../styles/Header.module.scss";
+import "../styles/main.scss"
+import logoImage from "../images/qsc_logo_cropped_100x100.png";
+import {Image} from "astro:assets";
+---
+<header class={Header.header}>
+        <div class={Header.title} aria-hidden="true">
+            <Image src={logoImage} alt="Queen's Space Conference Logo" style="height: auto; width: 3em; object-fit: cover";/>
+            <p>Queen's Space Conference</p>
+        </div>
+
+        <nav id="navbar" role="navigation" aria-label="Website Navigation">
+            <ul>
+                <li><a href="./home">Home</a></li>
+                <li><a>Tickets</a></li>
+            </ul>
+            <button class={Header.hamburger} aria-controls="navbar" aria-expanded="false">
+                <div></div>
+                <div></div>
+                <div></div>
+            </button>
+        </nav>
+</header>
+<script>
+    import Header from "../styles/Header.module.scss"
+
+    // Initialize navbarHeight variable
+    let navbarHeight = 0;
+
+    function init() {
+        setHeroHeight()
+        setNavbarLogic()
+    }
+
+    // Define a function to set the CSS variable for hero section
+    function setHeroHeight() {
+        const navbar = document.querySelector('header');
+        if (navbar) {
+            navbarHeight = navbar.offsetHeight;
+            const hero = document.querySelector('.hero');
+            document.querySelector(':root').style.setProperty('--navbar-height', `${navbarHeight}px`)
+        }
+    }
+
+    function setNavbarLogic() {
+        const hamburger = document.querySelector("nav button")
+        if(hamburger) {
+            hamburger.addEventListener('click', () => {
+                const hamburger = document.querySelector("nav button")
+                const nav = document.querySelector("nav")
+                const ul = nav.querySelector("ul")
+                hamburger.ariaExpanded = hamburger.ariaExpanded === "false" ? "true" : "false"
+                const expanded = hamburger.ariaExpanded
+                if (expanded === "true") {
+                    nav.classList.add(Header.expanded)
+                } else {
+                    console.log("rem")
+                    nav.classList.remove(Header.expanded)
+                }
+            })
+        }
+    }
+    window.addEventListener('DOMContentLoaded', init);
+</script>

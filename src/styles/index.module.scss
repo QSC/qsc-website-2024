@@ -7,12 +7,17 @@ $faq-bg: rgba($light-purple, 80%);
 .hero {
   background-image: url("../images/spacebg.png");
   background-attachment: fixed;
+  background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 100vh;
+  min-height: calc(100vh - var(--navbar-height));
   overflow: hidden;
+  position:relative;
 
+  >* {
+    z-index: 1;
+  }
   .top {
     display: flex;
     flex-direction: row;
@@ -44,7 +49,7 @@ $faq-bg: rgba($light-purple, 80%);
         display: flex;
         align-items: center;
         justify-content: center;
-
+        position: relative;
         h1 {
           @media screen and (max-width: $screen-mobile-large){
             font-size: 4rem;
@@ -110,6 +115,18 @@ $faq-bg: rgba($light-purple, 80%);
       text-align: center;
     }
   }
+}
+
+// black to cover the bg image to make text readable
+.hero::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width:100%;
+    height:100%;
+    background-color: rgba(0 0 0 / .30);
+    z-index: 0;
+    content:"";
 }
 
 .bgs {
