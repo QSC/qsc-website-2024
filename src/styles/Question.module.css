@@ -29,7 +29,7 @@ faq-question .header button {
   all: unset;
   cursor: pointer;
 }
-faq-question .header button:focus {
+faq-question .header button:focus-visible {
   outline: #8970E0 solid 3px;
 }
 faq-question .header div:has(> svg) {

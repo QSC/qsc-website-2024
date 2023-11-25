@@ -16,8 +16,6 @@
     ul {
       display: flex;
       flex-direction: row;
-      padding: 1em;
-
       list-style: none;
     }
 
@@ -31,6 +29,8 @@
       color: $white;
       text-align: center;
       padding:1em;
+      display: inline-block;
+      text-decoration: none;
     }
 
     a:hover {

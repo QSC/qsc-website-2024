@@ -14,7 +14,6 @@
 .header nav ul {
   display: flex;
   flex-direction: row;
-  padding: 1em;
   list-style: none;
 }
 .header nav li {
@@ -26,6 +25,8 @@
   color: #D3E5FF;
   text-align: center;
   padding: 1em;
+  display: inline-block;
+  text-decoration: none;
 }
 .header nav a:hover {
   background-color: #8970E0;

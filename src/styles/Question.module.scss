@@ -31,7 +31,7 @@ faq-question {
       all: unset;
       cursor: pointer;
     }
-    button:focus{
+    button:focus-visible{
       outline: $light-purple solid 3px;
     }
 

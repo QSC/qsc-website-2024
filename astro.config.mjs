@@ -6,6 +6,9 @@ export default defineConfig({
 	site: "https://qsconference.ca/",
 
 	redirects: {
-		'/': '/home'
+		'/': '/home',
+		"/shop": "/tickets",
+		"/buy": "/tickets",
+		"/attend": "/tickets"
 	}
 });
