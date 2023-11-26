@@ -70,5 +70,9 @@
   margin-top: 1em;
   text-decoration: none;
 }
+.main .card a:hover {
+  background-color: #333e84;
+  color: orange;
+}
 
 /*# sourceMappingURL=tickets.module.css.map */

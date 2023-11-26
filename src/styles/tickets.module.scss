@@ -80,5 +80,10 @@
       margin-top: 1em;
       text-decoration: none;
     }
+
+    a:hover {
+      background-color: lighten($dark-purple,15);
+      color: orange;
+    }
   }
 }
