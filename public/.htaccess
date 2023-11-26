@@ -3,3 +3,7 @@ Redirect 301 /shop https://qsconference.ca/tickets
 Redirect 301 /buy https://qsconference.ca/tickets
 Redirect 301 /attend https://qsconference.ca/tickets
 Redirect 301 /purchase https://qsconference.ca/tickets
+
+Redirect 301 /sponsor https://qsconference.ca/Sponsorship%20Package.pdf
+Redirect 301 /sponsors https://qsconference.ca/Sponsorship%20Package.pdf
+Redirect 301 /sponsorship https://qsconference.ca/Sponsorship%20Package.pdf
