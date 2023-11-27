@@ -44,13 +44,26 @@
     font-size: 2em;
   }
 
-  .bursaryBlurb {
-    color: $orange;
-    margin-bottom: .5em;
+  :global(span.orange) {
+    font-weight: $heavy-weight;
+  }
+
+  .ticketBlurb, .bursaryBlurb {
     background-color: rgba(black, 40%);
     border-radius: 20px;
     // to make the p tag shrink to the text size
     display:inline-block;
+  }
+
+  .ticketBlurb {
+    font-size: 1.3em;
+    font-weight: $medium-weight;
+    margin-bottom: 1em;
+  }
+
+  .bursaryBlurb {
+    color: $orange;
+    margin-bottom: .5em;
     padding:.3em;
     padding-inline: .5em;
     font-weight: $medium-weight;
