@@ -5,7 +5,7 @@ $border-rad: 1em;
 faq-question {
   position: relative;
   display: block;
-  background-color: $light-purple;
+  background-color: darken($light-purple,2);
   border-radius: $border-rad;
   max-width: 50vw;
   //border: 1rem solid darken($dark-purple, 3);
