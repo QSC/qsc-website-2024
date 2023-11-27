@@ -1,4 +1,5 @@
-DirectoryIndex home/home.html
+DirectoryIndex /home/index.html
+Redirect 301 /ticket https://qsconference.ca/tickets
 Redirect 301 /shop https://qsconference.ca/tickets
 Redirect 301 /buy https://qsconference.ca/tickets
 Redirect 301 /attend https://qsconference.ca/tickets
