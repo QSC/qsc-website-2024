@@ -1,0 +1,36 @@
+@import "fonts";
+@import "variables";
+
+.main {
+  background-color: $dark-purple;
+  padding:2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  h1 {
+    color: $light-purple;
+  }
+
+  p {
+    margin-top: .6em;
+  }
+
+  a {
+    padding: 1em;
+    background-color: $light-purple;
+    border-radius: 20px;
+    display: inline-block;
+    text-decoration: none;
+    margin-top:1em;
+    color:$white;
+    font-family: $orbitron;
+    font-weight: $medium-weight;
+    letter-spacing: .05em;
+  }
+
+  a:hover {
+    background-color: darken($light-purple,20);
+    color:$orange;
+  }
+}

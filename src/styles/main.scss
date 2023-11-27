@@ -9,6 +9,10 @@
   color: $white;
 }
 
+html {
+  min-height: 100vh;
+}
+
 //@media screen and (max-width: $screen-mobile-large){
 //  :root {
 //    font-size: 8px;
@@ -23,6 +27,8 @@
 
 body {
   font-size: 2rem;
+  min-height: 100%;
+  background-color: $dark-purple;
 }
 
 h1,h2,h3 {
