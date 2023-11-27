@@ -43,10 +43,18 @@
   }
 
   .title {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap:.8em;
+    a {
+      color:inherit;
+      text-decoration: none;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap:.8em;
+    }
+
+    a:hover {
+      color:inherit;
+    }
   }
 
   @media screen and (max-width: $screen-mobile-large) {

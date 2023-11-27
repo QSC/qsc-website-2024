@@ -5,22 +5,23 @@ import logoImage from "../images/qsc_logo_cropped_100x100.png";
 import {Image} from "astro:assets";
 ---
 <header class={Header.header}>
-        <div class={Header.title} aria-hidden="true">
+    <div class={Header.title} aria-hidden="true">
+        <a href="../home">
             <Image src={logoImage} alt="Queen's Space Conference Logo" style="height: auto; width: 3em; object-fit: cover";/>
             <p>Queen's Space Conference</p>
-        </div>
-
-        <nav id="navbar" role="navigation" aria-label="Website Navigation">
-            <ul>
-                <li><a href="../home">Home</a></li>
-                <li><a href="../tickets">Tickets</a></li>
-            </ul>
-            <button class={Header.hamburger} aria-controls="navbar" aria-expanded="false">
-                <div></div>
-                <div></div>
-                <div></div>
-            </button>
-        </nav>
+        </a>
+    </div>
+    <nav id="navbar" role="navigation" aria-label="Website Navigation">
+        <ul>
+            <li><a href="../home">Home</a></li>
+            <li><a href="../tickets">Tickets</a></li>
+        </ul>
+        <button class={Header.hamburger} aria-controls="navbar" aria-expanded="false">
+            <div></div>
+            <div></div>
+            <div></div>
+        </button>
+    </nav>
 </header>
 <script>
     import Header from "../styles/Header.module.scss"
