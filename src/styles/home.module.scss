@@ -166,6 +166,7 @@ main:has(.hero) {
       margin-left: var(--l-padding);
       @media screen and (max-width: $screen-mobile-large) {
         text-align: center;
+        margin-left: 0;
       }
     }
 
