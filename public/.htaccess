@@ -9,4 +9,4 @@ Redirect 301 /sponsor https://qsconference.ca/Sponsorship%20Package.pdf
 Redirect 301 /sponsors https://qsconference.ca/Sponsorship%20Package.pdf
 Redirect 301 /sponsorship https://qsconference.ca/Sponsorship%20Package.pdf
 
-ErrorDocument 404 /404
+ErrorDocument 404 /404.html

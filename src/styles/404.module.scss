@@ -4,9 +4,6 @@
 .main {
   background-color: $dark-purple;
   padding:2em;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 
   h1 {
     color: $light-purple;
@@ -16,7 +13,11 @@
     margin-top: .6em;
   }
 
-  a {
+  p > a {
+    color: $orange;
+  }
+
+  > a {
     padding: 1em;
     background-color: $light-purple;
     border-radius: 20px;
@@ -29,7 +30,7 @@
     letter-spacing: .05em;
   }
 
-  a:hover {
+  > a:hover {
     background-color: darken($light-purple,20);
     color:$orange;
   }
