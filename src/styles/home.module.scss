@@ -149,6 +149,15 @@ main:has(.hero) {
   background-color: $about-bg;
   //background: linear-gradient(to bottom, $about-bg 95%, $faq-bg 100%);
 
+  a {
+    color: lighten($orange,9);
+    font-weight: $medium-weight;
+
+  }
+  a:hover {
+    color: $white;
+  }
+
   .points {
     --l-padding: 2rem;
     display: flex;
