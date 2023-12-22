@@ -1,0 +1,36 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+
+const images = await Astro.glob(
+    "../images/Speaker Headshots/*/*.{jpg,JPG,jpeg,png,PNG,webp}"
+).then((files) => {
+    const map = {}
+    for (const file of files) {
+        const f = file.default
+        const re = /(?<=\/)[a-z-]*(?=\.)/ // matches some-name in "/some-name.extension"
+        const match = f.src.match(re)
+        map[match] = f
+    }
+    console.log(map)
+    return map
+});
+---
+
+<Layout title="Speakers">
+    <meta slot="head" name="description" property="og:description" content="The Queen's Space Conference has had over 75 unique professionals in the space industry speak over our 10 years of running. The conference is centered around a series of exciting talks from professionals in the space spector, innovative workshops, and networking opportunities. Come to QSC 2024 on Febuary 3rd and Febuary 4th to learn about all things space." />
+    <meta slot="head" property="og:url" content="https://www.qsconference.ca/speakers">
+
+    <main slot="content">
+        {
+            Object.keys(images).map((key) => (
+                    <Image
+                            src={images[key]}
+                            width="100"
+                            height="-1"
+                            alt="a speaker"
+                    />
+            ))
+        }
+    </main>
+</Layout>
