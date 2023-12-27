@@ -22,3 +22,5 @@ pnpm-debug.log*
 #IntelliJ
 .idea*
 *.css*
+
+*/images/*

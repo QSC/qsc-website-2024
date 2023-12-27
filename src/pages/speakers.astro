@@ -1,5 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Speakers from "../styles/speakers.module.scss";
+import speakers from "../res/speaker_data_2023_v1.json"
 import { Image } from "astro:assets";
 
 const images = await Astro.glob(
@@ -8,11 +10,11 @@ const images = await Astro.glob(
     const map = {}
     for (const file of files) {
         const f = file.default
-        const re = /(?<=\/)[a-z-]*(?=\.)/ // matches some-name in "/some-name.extension"
+        const re = /(?<=\/)[a-z-\.]*(?=\?)/ // matches some-name in "/some-name.extension"
         const match = f.src.match(re)
         map[match] = f
     }
-    console.log(map)
+    // console.log(map)
     return map
 });
 ---
@@ -22,15 +24,50 @@ const images = await Astro.glob(
     <meta slot="head" property="og:url" content="https://www.qsconference.ca/speakers">
 
     <main slot="content">
-        {
-            Object.keys(images).map((key) => (
-                    <Image
-                            src={images[key]}
-                            width="100"
-                            height="-1"
-                            alt="a speaker"
-                    />
-            ))
-        }
+        <h1>History of QSC Speakers</h1>
+        <div>
+            {
+                Array.from(Array(11).keys()).map(i => {
+                    const year = i+2013
+                    return (<a href=`#${year}` class={Speakers.yearButton}>{year}</a>)
+                })
+            }
+        </div>
+        <div>
+            {
+                Object.keys(speakers).reverse().map(year => (
+                    <h2>{year}</h2>
+                    <div>
+                        {
+                            speakers[year].map(speaker => {
+                                const path = speaker["headshot-path"]
+                                console.log(path)
+                                if(path && Object.keys(images).includes(path)) {
+                                    return (
+                                            <Image
+                                                    src={images[path]}
+                                                    width="100"
+                                                    height="-1"
+                                                    alt="a speaker"
+                                            />)
+                                } else {
+                                    return <p>{speaker["headshot-path"]}</p>
+                                }
+                            })
+                        }
+                    </div>
+                ))
+            }
+        </div>
+        <!--{-->
+        <!--    Object.keys(images).map((key) => (-->
+        <!--            <Image-->
+        <!--                    src={images[key]}-->
+        <!--                    width="100"-->
+        <!--                    height="-1"-->
+        <!--                    alt="a speaker"-->
+        <!--            />-->
+        <!--    ))-->
+        <!--}-->
     </main>
 </Layout>

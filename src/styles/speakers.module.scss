@@ -1,0 +1,17 @@
+@import "fonts";
+@import "variables";
+
+.yearButton {
+  background-color: $light-purple;
+  padding-block: 0.5em;
+  padding-inline: 1.5em;
+  border-radius: 20px;
+  font-size: 1.5em;
+}
+
+div:has(>.yearButton) {
+  display: flex;
+  flex-wrap: wrap;
+  width: 50%;
+  gap:0.5em;
+}
