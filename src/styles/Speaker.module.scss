@@ -1,0 +1,30 @@
+@import "fonts";
+@import "variables";
+
+main {
+  padding-block:2em;
+  padding-inline: 3em;
+}
+
+.speaker {
+  display: flex;
+  flex-direction: row;
+  gap:1em;
+  font-size: 1em;
+  font-family: $orbitron;
+  //max-width: ;
+
+  >:has(> p) {
+    display: flex;
+    flex-direction: column;
+    gap: .4em;
+
+    p {
+      max-width: 15ch;
+    }
+  }
+
+  img {
+    border-radius: 15px;
+  }
+}

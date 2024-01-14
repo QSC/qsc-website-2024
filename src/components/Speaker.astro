@@ -1,0 +1,30 @@
+---
+import "../styles/main.scss"
+import Speaker from "../styles/Speaker.module.scss";
+import speakerIcon from "../icons/speaker.svg";
+import {Image} from "astro:assets";
+
+const { speaker, images, year } = Astro.props;
+
+const headshotPath = speaker["headshot-path"]
+let src = ""
+if(headshotPath && Object.keys(images).includes(headshotPath)) {
+    src = images[headshotPath]
+} else {
+    src = speakerIcon
+    console.error(`Couldn't find headshot for ${speaker.name} from ${year}...using default headshot`)
+}
+---
+
+<div class={Speaker.speaker}>
+    <Image
+            src={src}
+            height="200"
+            alt="a speaker"
+    />
+    <div>
+        <p>{speaker.name}</p>
+        <p class="orange">{speaker.company}</p>
+        <p>{speaker.position}</p>
+    </div>
+</div>
