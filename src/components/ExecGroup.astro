@@ -1,0 +1,19 @@
+---
+import "../styles/main.scss"
+import ExecGroup from "../styles/ExecGroup.module.scss";
+import { Image } from 'astro:assets';
+import mail from "../icons/mail.svg"
+import githubIcon from "../icons/githubIcon.svg"
+const { title, email, githubLink } = Astro.props;
+---
+
+<div>
+    <div class={ExecGroup.title}>
+        { githubLink && <a href={githubLink}><img src={githubIcon.src}/></a>}
+        <h2>{title}</h2>
+        { email && <a href=`mailto:${email}`><img src={mail.src}/></a>}
+    </div>
+    <div class={ExecGroup.execs}>
+        <slot/>
+    </div>
+</div>
