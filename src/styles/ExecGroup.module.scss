@@ -1,9 +1,18 @@
 @import "variables";
 @import "fonts";
 
-h2 {
+h3 {
   text-align: center;
   font-family: $quicksand;
+  font-size: 2.5em;
+
+  @media screen and (max-width: $screen-mobile-large) {
+    font-size: 2em;
+  }
+
+  @media screen and (max-width: $screen-mobile-medium) {
+    font-size: 1.5em;
+  }
 }
 
 .execs {

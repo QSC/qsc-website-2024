@@ -10,7 +10,7 @@ const { title, email, githubLink } = Astro.props;
 <div>
     <div class={ExecGroup.title}>
         { githubLink && <a href={githubLink} target="_blank"><img src={githubIcon.src}/></a>}
-        <h2>{title}</h2>
+        <h3>{title}</h3>
         { email && <a href=`mailto:${email}`><img src={mail.src}/></a>}
     </div>
     <div class={ExecGroup.execs}>
