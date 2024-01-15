@@ -6,6 +6,11 @@
   width: 100%;
   overflow: hidden;
   padding: 1em;
+  position: relative;
+
+  ::before {
+    position:absolute;
+  }
 
   .content {
     display: flex;

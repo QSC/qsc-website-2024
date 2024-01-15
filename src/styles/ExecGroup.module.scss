@@ -11,7 +11,8 @@ h2 {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 6em;
+  column-gap: 6em;
+  row-gap: 1em;
 }
 
 .title {
@@ -19,8 +20,9 @@ h2 {
   justify-content: center;
   align-items: center;
   gap: .6em;
+  margin-bottom:.8em;
 
- img {
+  img {
    display: block;
    width: 40px;
  }
