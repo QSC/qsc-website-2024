@@ -1,0 +1,14 @@
+---
+import "../styles/main.scss"
+import Exec from "../styles/Exec.module.scss";
+const { img, name, position, linkedin } = Astro.props;
+import { Image } from 'astro:assets';
+---
+
+<div class={Exec.exec}>
+    <div>
+        <Image src={img} alt=`headshot of {name}`width="200px" height="200px"/>
+    </div>
+    <p>{name}</p>
+    <p>{position}</p>
+</div>
