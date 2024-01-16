@@ -17,7 +17,6 @@ const images = await Astro.glob(
         const match = f.src.match(re)
         map[match] = f
     }
-    // console.log(map)
     return map
 });
 ---
@@ -52,15 +51,5 @@ const images = await Astro.glob(
                 ))
             }
         </div>
-        <!--{-->
-        <!--    Object.keys(images).map((key) => (-->
-        <!--            <Image-->
-        <!--                    src={images[key]}-->
-        <!--                    width="100"-->
-        <!--                    height="-1"-->
-        <!--                    alt="a speaker"-->
-        <!--            />-->
-        <!--    ))-->
-        <!--}-->
     </main>
 </Layout>
