@@ -1,0 +1,64 @@
+@import "fonts";
+@import "variables";
+
+.infoButton {
+  all:unset;
+  cursor: pointer;
+  border-radius: 50%;
+  display:block;
+  width:35px;
+  background-color:lightgrey;
+
+  img {
+    width:100%;
+    height:auto;
+    border-radius: 50%;
+    display:block;
+  }
+
+  :focus-visible{
+    outline: cornflowerblue solid 3px;
+  }
+
+  :hover {
+    filter: brightness(50%)
+  }
+}
+
+div:has(>.left) {
+  display:grid;
+  grid-template-columns: 1fr 2fr;
+
+  .left {
+    h2 {
+      font-size: 1.5em;
+      grid-column-start:1;
+      grid-row-start:1;
+    }
+
+    div:has(>img) {
+      width:200px;
+      height:200px;
+      overflow: hidden;
+      border-radius: 15px;
+      grid-column-start:1;
+      grid-row-start:2;
+    }
+
+    img {
+      width:200px;
+      height:auto;
+      border-radius: 15px;
+    }
+  }
+
+  .right {
+    p {
+      font-family: $quicksand;
+      font-size: .8em;
+      grid-column-start:2;
+      grid-row-start:2;
+      width:100%;
+    }
+  }
+}

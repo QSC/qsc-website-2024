@@ -1,0 +1,26 @@
+---
+import SpeakerBioButton from "../styles/SpeakerBioButton.module.scss";
+import infoIcon from "../icons/information_icon.png";
+import {Image} from "astro:assets";
+import Modal from "./Modal.astro";
+
+const {speaker, src} = Astro.props;
+---
+<Modal>
+    <button slot="button" class={SpeakerBioButton.infoButton}><Image src={infoIcon} alt="information icon" width="200px"/></button>
+    <div slot="content">
+        <div class={SpeakerBioButton.left}>
+            <h2>{speaker.name}</h2>
+            <div>
+                <Image
+                        src={src}
+                        alt=`headshot of ${speaker.name}`
+                        width="250px"
+                />
+            </div>
+        </div>
+        <div class={SpeakerBioButton.right}>
+            <p>{speaker.bio}</p>
+        </div>
+    </div>
+</Modal>

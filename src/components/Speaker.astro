@@ -6,6 +6,7 @@ import {Image} from "astro:assets";
 import infoIcon from "../icons/information_icon.png"
 import wwwIcon from "../icons/www_icon.png"
 import Modal from "./Modal.astro";
+import SpeakerBio from "./SpeakerBioButton.astro";
 
 const { speaker, images, year } = Astro.props;
 
@@ -31,10 +32,7 @@ if(headshotPath && Object.keys(images).includes(headshotPath)) {
         <p class="orange">{speaker.company}</p>
         <p>{speaker.position}</p>
         <div class={Speaker.icons}>
-            <Modal>
-                <button slot="button" class={Speaker.infoButton}><Image src={infoIcon} alt="information icon" width="200px"/></button>
-                <p slot="content">Hi</p>
-            </Modal>
+            <SpeakerBio speaker={speaker} src={src}/>
         </div>
     </div>
 </div>

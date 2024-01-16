@@ -61,30 +61,5 @@ main {
   }
 
   .icons {
-    img {
-      width:100%;
-      height:auto;
-      border-radius: 50%;
-      display:block;
-    }
-
-    .infoButton {
-      all:unset;
-      cursor: pointer;
-      border-radius: 50%;
-      display:block;
-      width:35px;
-      background-color:lightgrey;
-
-
-      :focus-visible{
-        outline: cornflowerblue solid 3px;
-      }
-
-      :hover {
-        filter: brightness(50%)
-      }
-    }
-
   }
 }
