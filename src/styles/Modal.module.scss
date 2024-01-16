@@ -1,0 +1,30 @@
+@import "fonts";
+@import "variables";
+
+.modal::backdrop {
+    background-color: rgba($dark-purple, 60%);
+}
+
+.modal {
+  background-color: $light-purple;
+  border: $dark-purple 1px solid;
+  color: $white;
+  border-radius: 5px;
+  padding:1em;
+  min-width: 100px;
+
+  >div>div:nth-child(1) {
+    width:100%;
+    display:flex;
+    justify-content: right;
+  }
+
+  .closeButton {
+    //all: unset;
+    cursor: pointer;
+    background-color: purple;
+    :focus-visible{
+      outline: red solid 3px;
+    }
+  }
+}

@@ -3,6 +3,9 @@ import "../styles/main.scss"
 import Speaker from "../styles/Speaker.module.scss";
 import speakerIcon from "../icons/speaker.svg";
 import {Image} from "astro:assets";
+import infoIcon from "../icons/information_icon.png"
+import wwwIcon from "../icons/www_icon.png"
+import Modal from "./Modal.astro";
 
 const { speaker, images, year } = Astro.props;
 
@@ -27,5 +30,11 @@ if(headshotPath && Object.keys(images).includes(headshotPath)) {
         <p>{speaker.name}</p>
         <p class="orange">{speaker.company}</p>
         <p>{speaker.position}</p>
+        <div class={Speaker.icons}>
+            <Modal>
+                <button slot="button" class={Speaker.infoButton}><Image src={infoIcon} alt="information icon" width="200px"/></button>
+                <p slot="content">Hi</p>
+            </Modal>
+        </div>
     </div>
 </div>
