@@ -1,0 +1,54 @@
+@import "fonts";
+@import "variables";
+
+.main {
+  background-image: url("../images/spacebg.png");
+  background-attachment: fixed;
+  background-size: cover;
+
+  h1 {
+    color: lighten($dark-purple,2);
+    font-size: 6em;
+    @media screen and (max-width: $screen-mobile-large) {
+      font-size: 4em;
+    }
+  }
+
+  h2 {
+    color: lighten($light-purple,3);
+    font-size: 5em;
+    text-align: center;
+    margin-bottom: .2em;
+    @media screen and (max-width: $screen-mobile-large) {
+      font-size: 3em;
+    }
+
+    @media screen and (max-width: $screen-mobile-medium) {
+      font-size: 2.5em;
+    }
+  }
+
+  .groups {
+    display: flex;
+    flex-direction: column;
+    gap:1.5em;
+    padding-bottom: 1em;
+  }
+
+  p {
+    @media screen and (min-width: $screen-mobile-large) {
+      max-width: 75%;
+    }
+  }
+
+  section:nth-of-type(1) {
+    background-color:darken(rgba($light-purple,80%),2);
+    padding-inline:2em;
+    padding-block:1em;
+    padding-bottom: 2em;
+  }
+
+  section:nth-of-type(2) {
+    background-color: rgba($dark-purple,80%);
+  }
+}

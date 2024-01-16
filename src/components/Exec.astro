@@ -1,0 +1,18 @@
+---
+import "../styles/main.scss"
+import Exec from "../styles/Exec.module.scss";
+import { Image } from 'astro:assets';
+import linkedinIcon from "../icons/linkedin.svg"
+const { img, name, position, linkedin } = Astro.props;
+---
+
+<div class={Exec.exec}>
+    <Image src={img} alt=`headshot of ${name}`width="600px" height="600px"/>
+    <div class={Exec.desc}>
+        <p>{name}</p>
+        <p>{position}</p>
+        { linkedin && (
+                <a href={linkedin} target="_blank"><img src={linkedinIcon.src} alt="linkedin logo" width="25px"/></a>
+        )}
+    </div>
+</div>
