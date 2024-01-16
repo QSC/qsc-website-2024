@@ -22,6 +22,14 @@ main {
   flex-wrap: wrap;
   //max-width: ;
 
+  @media screen and (max-width: $screen-desktop) {
+    justify-content: center;
+  }
+  
+  @media screen and (max-width: $screen-mobile-large){
+    flex-direction: column;
+  }
+
   >:has(> p) {
     display: flex;
     flex-direction: column;
