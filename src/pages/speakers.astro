@@ -37,16 +37,20 @@ const images = await Astro.glob(
             }
         </div>
 
-        <div>
+        <div class={Speakers.yearSections}>
             {
                 Object.keys(speakers).reverse().map(year => (
-                    <h2 id={year}>--{year}--</h2>
-                    <div class={Speakers.speakers}>
-                        {
-                            speakers[year].map(speaker => {
-                                return <Speaker year={year} speaker={speaker} images={images}/>
-                            })
-                        }
+                    <div>
+                        <h2 id={year}>--{year}--</h2>
+                        <div>
+                            <div class={Speakers.speakers}>
+                                {
+                                    speakers[year].map(speaker => {
+                                        return <Speaker year={year} speaker={speaker} images={images}/>
+                                    })
+                                }
+                            </div>
+                        </div>
                     </div>
                 ))
             }

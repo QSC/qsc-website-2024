@@ -17,11 +17,12 @@ if(headshotPath && Object.keys(images).includes(headshotPath)) {
 ---
 
 <div class={Speaker.speaker}>
-    <Image
-            src={src}
-            height="200"
-            alt="a speaker"
-    />
+    <div class={Speaker.imgDiv}>
+        <Image
+                src={src}
+                alt=`headshot of ${speaker.name}`
+        />
+    </div>
     <div>
         <p>{speaker.name}</p>
         <p class="orange">{speaker.company}</p>

@@ -1,6 +1,13 @@
 @import "fonts";
 @import "variables";
 
+:root {
+  --img-size: 250px;
+
+  @media screen and (max-width: $screen-desktop) {
+    --img-size: 200px;
+  }
+}
 main {
   padding-block:2em;
   padding-inline: 3em;
@@ -12,6 +19,7 @@ main {
   gap:1em;
   font-size: 1em;
   font-family: $orbitron;
+  flex-wrap: wrap;
   //max-width: ;
 
   >:has(> p) {
@@ -21,10 +29,26 @@ main {
 
     p {
       max-width: 15ch;
+      word-break: break-word;
+    }
+
+    p:nth-child(2),p:nth-child(3) {
+      font-family: $quicksand;
     }
   }
 
   img {
+    position:absolute;
+    border-radius: 15px;
+    width: var(--img-size);
+    height:auto;
+  }
+
+  .imgDiv {
+    width: var(--img-size);
+    height: var(--img-size);
+    overflow: hidden;
+    position:relative;
     border-radius: 15px;
   }
 }
