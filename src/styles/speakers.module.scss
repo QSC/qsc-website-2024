@@ -1,6 +1,18 @@
 @import "fonts";
 @import "variables";
 
+.main {
+  background-image: url("../images/spacebg.png");
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.history {
+  background-color: rgba($dark-purple,90%);
+  padding-block:2em;
+  padding-inline: 3em;
+}
+
 .yearButton {
   background-color: $light-purple;
   padding-block: 0.5em;

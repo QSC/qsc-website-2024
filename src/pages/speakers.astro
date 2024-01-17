@@ -25,35 +25,38 @@ const images = await Astro.glob(
     <meta slot="head" name="description" property="og:description" content="The Queen's Space Conference has had over 75 unique professionals in the space industry speak over our 10 years of running. The conference is centered around a series of exciting talks from professionals in the space spector, innovative workshops, and networking opportunities. Come to QSC 2024 on Febuary 3rd and Febuary 4th to learn about all things space." />
     <meta slot="head" property="og:url" content="https://www.qsconference.ca/speakers">
 
-    <main slot="content">
-        <h1>History of QSC Speakers</h1>
-        <!-- buttons to jump to years -->
-        <div>
-            {
-                Array.from(Array(11).keys()).map(i => {
-                    const year = i+2013
-                    return (<a href={`#${year}`} class={Speakers.yearButton}>{year}</a>)
-                })
-            }
-        </div>
+    <main slot="content" class={Speakers.main}>
+        <section class={Speakers.history}>
 
-        <div class={Speakers.yearSections}>
-            {
-                Object.keys(speakers).reverse().map(year => (
-                    <div>
-                        <h2 id={year}>--{year}--</h2>
+            <h1>History of QSC Speakers</h1>
+            <!-- buttons to jump to years -->
+            <div>
+                {
+                    Array.from(Array(11).keys()).map(i => {
+                        const year = i+2013
+                        return (<a href={`#${year}`} class={Speakers.yearButton}>{year}</a>)
+                    })
+                }
+            </div>
+
+            <div class={Speakers.yearSections}>
+                {
+                    Object.keys(speakers).reverse().map(year => (
                         <div>
-                            <div class={Speakers.speakers}>
-                                {
-                                    speakers[year].map(speaker => {
-                                        return <Speaker year={year} speaker={speaker} images={images}/>
-                                    })
-                                }
+                            <h2 id={year}>--{year}--</h2>
+                            <div>
+                                <div class={Speakers.speakers}>
+                                    {
+                                        speakers[year].map(speaker => {
+                                            return <Speaker year={year} speaker={speaker} images={images}/>
+                                        })
+                                    }
+                                </div>
                             </div>
                         </div>
-                    </div>
-                ))
-            }
-        </div>
+                    ))
+                }
+            </div>
+        </section>
     </main>
 </Layout>
