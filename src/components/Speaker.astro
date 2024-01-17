@@ -30,7 +30,7 @@ if(headshotPath && Object.keys(images).includes(headshotPath)) {
     <div>
         <p>{speaker.name}</p>
         <p class="orange">{speaker.company}</p>
-        <p>{speaker.position}</p>
+        <p set:html={speaker.position.replaceAll("/","/<wbr/>")}></p>
         <div class={Speaker.icons}>
             <SpeakerBio speaker={speaker} src={src}/>
         </div>
