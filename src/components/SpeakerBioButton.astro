@@ -4,13 +4,13 @@ import infoIcon from "../icons/information_icon.png";
 import {Image} from "astro:assets";
 import Modal from "./Modal.astro";
 
-const {speaker, src} = Astro.props;
+const {speaker, year, src} = Astro.props;
 ---
 <Modal>
     <button slot="button" class={SpeakerBioButton.infoButton}><Image src={infoIcon} alt="information icon" width="200px"/></button>
-    <div slot="content">
+    <div slot="content" class={SpeakerBioButton.content}>
+        <h2>{speaker.name + ` (${year})`}</h2>
         <div class={SpeakerBioButton.left}>
-            <h2>{speaker.name}</h2>
             <div>
                 <Image
                         src={src}
@@ -18,9 +18,9 @@ const {speaker, src} = Astro.props;
                         width="250px"
                 />
             </div>
+            <p class="orange">{speaker.company}</p>
+            <p>{speaker.position}</p>
         </div>
-        <div class={SpeakerBioButton.right}>
-            <p>{speaker.bio}</p>
-        </div>
+        <p class={SpeakerBioButton.bio}>{speaker.bio}</p>
     </div>
 </Modal>

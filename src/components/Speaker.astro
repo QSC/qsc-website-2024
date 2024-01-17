@@ -27,12 +27,12 @@ if(headshotPath && Object.keys(images).includes(headshotPath)) {
                 alt=`headshot of ${speaker.name}`
         />
     </div>
-    <div>
+    <div class={Speaker.text}>
         <p>{speaker.name}</p>
         <p class="orange">{speaker.company}</p>
         <p set:html={speaker.position.replaceAll("/","/<wbr/>")}></p>
         <div class={Speaker.icons}>
-            <SpeakerBio speaker={speaker} src={src}/>
+            <SpeakerBio speaker={speaker} year={year} src={src}/>
         </div>
     </div>
 </div>

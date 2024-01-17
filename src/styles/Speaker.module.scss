@@ -26,12 +26,12 @@
     flex-direction: column;
   }
 
-  >div:has(>p) {
+  .text {
     display: flex;
     flex-direction: column;
     gap: .4em;
 
-    p {
+    > p {
       max-width: 15ch;
       word-break: break-word;
     }
