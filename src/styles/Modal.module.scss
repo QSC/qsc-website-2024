@@ -2,8 +2,7 @@
 @import "variables";
 
 .modal::backdrop {
-    //background-color: rgba($light-purple, 60%);
-  background-image: url(../images/spacebg.png);
+  background-color: rgba($light-purple, 60%);
   opacity: 60%;
 }
 
