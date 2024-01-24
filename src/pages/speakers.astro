@@ -2,9 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Speakers from "../styles/speakers.module.scss";
 import speakers from "../res/speaker_data_2024_v3.json"
-import speakerIcon from "../icons/speaker.svg"
-import { Image } from "astro:assets";
-import Speaker from "../components/Speaker.astro";
+import SpeakerGroup from "../components/SpeakerGroup.astro";
 
 // loading all the images in
 const images = await Astro.glob(
@@ -42,18 +40,7 @@ const images = await Astro.glob(
             <div class={Speakers.yearSections}>
                 {
                     Object.keys(speakers).reverse().map(year => (
-                        <div>
-                            <h2 id={year}>--{year}--</h2>
-                            <div>
-                                <div class={Speakers.speakers}>
-                                    {
-                                        speakers[year].map(speaker => {
-                                            return <Speaker year={year} speaker={speaker} images={images}/>
-                                        })
-                                    }
-                                </div>
-                            </div>
-                        </div>
+                            <SpeakerGroup speakerList={speakers[year]} title={year} year={year} images={images}/>
                     ))
                 }
             </div>
