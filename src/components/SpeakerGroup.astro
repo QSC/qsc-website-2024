@@ -4,11 +4,13 @@ import Speaker from "./Speaker.astro";
 const { speakerList, title, year, images } = Astro.props;
 ---
 
-<div class={SpeakerGroup.speakerGroup}>
-    <h2>--{title}--</h2>
+<div id={year} class={SpeakerGroup.speakerGroup}>
+
+    { title && <h3>--{title}--</h3>}
+
     <div>
         <!-- The ID is for anchoring -->
-        <div id={year} class={SpeakerGroup.speakers}>
+        <div class={SpeakerGroup.speakers}>
             {
                 speakerList.map(speaker => {
                     return <Speaker year={year} speaker={speaker} images={images}/>

@@ -7,7 +7,7 @@ import Modal from "./Modal.astro";
 const {speaker, year, src} = Astro.props;
 ---
 <Modal>
-    <button slot="button" class={SpeakerBioButton.infoButton}><Image src={infoIcon} alt="information icon" width="200px"/></button>
+    <button slot="button" class={SpeakerBioButton.infoButton}><Image src={infoIcon} alt="blue information icon" width="200px"/></button>
     <div slot="content" class={SpeakerBioButton.content}>
         <h2>{speaker.name + ` (${year})`}</h2>
         <div class={SpeakerBioButton.left}>

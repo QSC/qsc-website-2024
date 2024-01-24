@@ -5,31 +5,95 @@
   background-image: url("../images/spacebg.png");
   background-attachment: fixed;
   background-size: cover;
-}
 
-.history {
-  background-color: rgba($dark-purple,90%);
-  padding-block:2em;
-  padding-inline: 3em;
-}
+  h1 {
+    margin-bottom: .3em;
+    font-size: 5em;
+    color: $light-purple;
 
-.yearButton {
-  background-color: $light-purple;
-  padding-block: 0.5em;
-  padding-inline: 1.5em;
-  border-radius: 20px;
-  font-size: 1.5em;
-}
+    @media screen and (max-width: $screen-mobile-medium){
+      font-size: 4em;
+    }
+    @media screen and (max-width: $screen-mobile-small){
+      font-size: 3em;
+    }
+  }
 
-div:has(>.yearButton) {
-  display: flex;
-  flex-wrap: wrap;
-  width: 50%;
-  gap:0.5em;
-}
+  .desc {
+    margin-bottom: 1em;
+    line-height: 2em;
 
-.yearSections {
-  display:flex;
-  flex-direction: column;
-  gap:2em;
+    img {
+      vertical-align:middle;
+    }
+
+    a {
+      color: $orange;
+    }
+
+    a:hover {
+      color: $white;
+    }
+  }
+
+  hr {
+    border-color:$light-purple;
+    margin:0;
+    margin-block:1em;
+  }
+
+  section {
+    padding-inline:2em;
+    background-color: rgba($dark-purple,90%);
+  }
+
+  section:nth-of-type(1) {
+    padding-bottom: .5em;
+    padding-top:1em;
+  }
+
+  section:nth-of-type(2) {
+    padding-bottom: 1em;
+  }
+
+  .history {
+    h2 {
+      color:$light-purple;
+      scroll-margin-top: calc(var(--navbar-height));
+    }
+
+    >p {
+      line-height: 2em;
+    }
+  }
+
+  div:has(>.yearButton) {
+    display: flex;
+    flex-wrap: wrap;
+    gap:0.5em;
+    margin-block: 2em;
+
+    .yearButton {
+      background-color: $light-purple;
+      text-align: center;
+      padding-block: 0.5em;
+      padding-inline: 1.5em;
+      border-radius: 20px;
+      font-size: 1.5em;
+      width: 150px;
+      text-decoration: none;
+      color: $dark-purple;
+    }
+
+    .yearButton:hover {
+      background-color: darken($light-purple,4);
+      color:$white;
+    }
+  }
+
+  .yearSections {
+    display:flex;
+    flex-direction: column;
+    gap:2em;
+  }
 }

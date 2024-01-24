@@ -1,6 +1,10 @@
 @import "fonts";
 @import "variables";
 
+.infoButton:focus-visible{
+  outline: $light-purple solid 3px;
+}
+
 .infoButton {
   all:unset;
   cursor: pointer;
@@ -16,10 +20,6 @@
     display:block;
   }
 
-  :focus-visible{
-    outline: cornflowerblue solid 3px;
-  }
-
   :hover {
     filter: brightness(50%)
   }
@@ -29,6 +29,7 @@
   display:grid;
   grid-template-columns: auto auto;
   column-gap: 1em;
+  row-gap: 1em;
 
   @media screen and (max-width: $screen-mobile-large) {
     display: flex;
@@ -46,6 +47,9 @@
   .left {
     grid-column-start:1;
     grid-row-start:2;
+    display:flex;
+    flex-direction: column;
+    gap: .1em;
 
     p {
       font-size: .9em;
