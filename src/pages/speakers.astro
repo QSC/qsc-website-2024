@@ -13,9 +13,9 @@ const images = await Astro.glob(
     const map = {}
     for (const file of files) {
         const f = file.default
-        const re = /(?<=\/)[a-z-\.]*(?=\?)/ // matches some-name in "/some-name.extension"
-        const match = f.src.match(re)
-        map[match] = f
+        const name = f.src.split("/").at(-1).split(".")[0]
+        map[name] = f
+        console.log(name)
     }
     return map
 });

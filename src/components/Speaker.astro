@@ -10,7 +10,7 @@ import SpeakerBio from "./SpeakerBioButton.astro";
 
 const { speaker, images, year } = Astro.props;
 
-const headshotPath = speaker["headshot-path"]
+const headshotPath = speaker["headshot-path"].split(".")[0]
 let src = ""
 if(headshotPath && Object.keys(images).includes(headshotPath)) {
     src = images[headshotPath]
