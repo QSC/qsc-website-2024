@@ -21,6 +21,6 @@ const {speaker, year, src} = Astro.props;
             <p class="orange">{speaker.company}</p>
             <p>{speaker.position}</p>
         </div>
-        <p class={SpeakerBioButton.bio}>{speaker.bio}</p>
+        <p set:html={speaker.bio} class={SpeakerBioButton.bio}></p>
     </div>
 </Modal>
