@@ -7,7 +7,6 @@
   background-size: cover;
 
   h1 {
-    margin-bottom: .3em;
     font-size: 5em;
     color: $light-purple;
 
@@ -20,7 +19,7 @@
   }
 
   .desc {
-    margin-bottom: 1em;
+    margin-block: 2em;
     line-height: 2em;
 
     img {
@@ -64,6 +63,10 @@
 
     >p {
       line-height: 2em;
+
+      img {
+        vertical-align:middle;
+      }
     }
   }
 

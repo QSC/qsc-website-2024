@@ -9,7 +9,7 @@ const {speaker, year, src} = Astro.props;
 <Modal>
     <button slot="button" class={SpeakerBioButton.infoButton}><Image src={infoIcon} alt="blue information icon" width="200px"/></button>
     <div slot="content" class={SpeakerBioButton.content}>
-        <h2>{speaker.name + ` (${year})`}</h2>
+        <h3>{speaker.name + ` (${year})`}</h3>
         <div class={SpeakerBioButton.left}>
             <div>
                 <Image
