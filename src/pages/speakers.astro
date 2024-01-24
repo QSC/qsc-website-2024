@@ -17,6 +17,8 @@ const images = await Astro.glob(
     }
     return map
 });
+
+const currentYear = "2024"
 ---
 
 <Layout title="Speakers">
@@ -39,9 +41,13 @@ const images = await Astro.glob(
 
             <div class={Speakers.yearSections}>
                 {
-                    Object.keys(speakers).reverse().map(year => (
-                            <SpeakerGroup speakerList={speakers[year]} title={year} year={year} images={images}/>
-                    ))
+                    Object.keys(speakers).reverse().map(year => {
+                        if(year != currentYear)
+                        {
+                            return <SpeakerGroup speakerList={speakers[year]} title={year} year={year} images={images}/>
+                        }
+                        return "";
+                    })
                 }
             </div>
         </section>

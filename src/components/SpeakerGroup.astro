@@ -7,7 +7,8 @@ const { speakerList, title, year, images } = Astro.props;
 <div class={SpeakerGroup.speakerGroup}>
     <h2>--{title}--</h2>
     <div>
-        <div class={SpeakerGroup.speakers}>
+        <!-- The ID is for anchoring -->
+        <div id={year} class={SpeakerGroup.speakers}>
             {
                 speakerList.map(speaker => {
                     return <Speaker year={year} speaker={speaker} images={images}/>
