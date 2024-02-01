@@ -7,12 +7,12 @@
 
     <url>
         <loc>https://www.qsconference.ca/home</loc>
-        <lastmod>2024-1-15</lastmod>
+        <lastmod>2024-2-01</lastmod>
     </url>
 
     <url>
         <loc>https://www.qsconference.ca/tickets</loc>
-        <lastmod>2024-1-15</lastmod>
+        <lastmod>2024-2-01</lastmod>
     </url>
 
     <url>
@@ -20,4 +20,8 @@
         <lastmod>2024-1-15</lastmod>
     </url>
 
+    <url>
+        <loc>https://www.qsconference.ca/speakers</loc>
+        <lastmod>2024-2-01</lastmod>
+    </url>
 </urlset>
