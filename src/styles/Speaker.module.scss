@@ -1,0 +1,61 @@
+@import "fonts";
+@import "variables";
+
+:root {
+  --img-size: 250px;
+
+  @media screen and (max-width: $screen-desktop) {
+    --img-size: 200px;
+  }
+}
+
+.speaker {
+  display: flex;
+  flex-direction: row;
+  gap:1em;
+  font-size: 1em;
+  font-family: $orbitron;
+  flex-wrap: wrap;
+  //max-width: ;
+
+  @media screen and (max-width: $screen-desktop) {
+    justify-content: center;
+  }
+  
+  @media screen and (max-width: $screen-mobile-large){
+    flex-direction: column;
+  }
+
+  .text {
+    display: flex;
+    flex-direction: column;
+    gap: .4em;
+
+    > p {
+      max-width: 15ch;
+      word-break: break-word;
+    }
+
+    p:nth-child(2),p:nth-child(3) {
+      font-family: $quicksand;
+    }
+  }
+
+  .imgDiv {
+    width: var(--img-size);
+    height: var(--img-size);
+    overflow: hidden;
+    position:relative;
+    border-radius: 15px;
+
+    img {
+      position:absolute;
+      border-radius: 15px;
+      width: var(--img-size);
+      height:auto;
+    }
+  }
+
+  .icons {
+  }
+}

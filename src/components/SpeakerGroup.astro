@@ -1,0 +1,21 @@
+---
+import SpeakerGroup from "../styles/SpeakerGroup.module.scss";
+import Speaker from "./Speaker.astro";
+const { speakerList, title, year, images } = Astro.props;
+---
+
+<div id={year} class={SpeakerGroup.speakerGroup}>
+
+    { title && <h3>--{title}--</h3>}
+
+    <div>
+        <!-- The ID is for anchoring -->
+        <div class={SpeakerGroup.speakers}>
+            {
+                speakerList.map(speaker => {
+                    return <Speaker year={year} speaker={speaker} images={images}/>
+                })
+            }
+        </div>
+    </div>
+</div>
