@@ -16,6 +16,8 @@ Redirect 301 /sponsorship https://qsconference.ca/Sponsorship%20Package.pdf
 Redirect 301 /about https://qsconference.ca/about-us
 Redirect 301 /staff https://qsconference.ca/about-us
 
+Redirect 301 /handbook https://qsconference.ca/Delegate%20Handbook.pdf
+
 # Page not found
 ErrorDocument 404 /404.html
 
