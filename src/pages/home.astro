@@ -1,4 +1,5 @@
 ---
+import "../styles/main.scss"
 import Layout from '../layouts/Layout.astro';
 import { Image } from 'astro:assets';
 import logoImage from "../images/qsc_logo_outlined_cropped_w800.png";
@@ -15,7 +16,6 @@ import networkingIcon from "../icons/networking.svg"
 import shuttleIcon from "../icons/space-shuttle.svg"
 import astronautIcon from "../images/astronaut_icon.png"
 
-import Home from "../styles/home.module.scss"
 import { getImage } from "astro:assets"
 import {callEndpoint} from "astro/dist/core/endpoint";
 import Question from "../components/Question.astro";
@@ -26,14 +26,14 @@ import Question from "../components/Question.astro";
 	<link slot="head" rel="canonical" href="https://qsconference.com/home">
 
 	<main slot="content">
-		<section class={Home.hero}>
-			<div class={Home.top}>
+		<section class="hero">
+			<div class="top">
 				<div>
-					<div class={Home.logoContainer}>
+					<div class="logoContainer">
 						<Image src={logoImage} alt="Queen's Space Conference Logo" style="height: auto; width: 50rem; object-fit: cover";/>
 					</div>
-					<div class={Home.heroTitleBox}>
-						<div class={Home.heroTitle}>
+					<div class="heroTitleBox">
+						<div class="heroTitle">
 							<h1>Inspiring; <br/> <span class="light-purple">Educating;</span> <br/> Connecting.</h1>
 						</div>
 						<div>
@@ -45,7 +45,7 @@ import Question from "../components/Question.astro";
 					</div>
 				</div>
 			</div>
-			<div  class={`center p-2 mt-1 ${Home.bottom}`}>
+			<div  class="center p-2 mt-1 bottom">
 				<div>
 					<p class="sem-h-small">Since 2013</p>
 					<p class="sem-h-small">QSC</p>
@@ -55,7 +55,7 @@ import Question from "../components/Question.astro";
 		</section>
 
 		<div style="position:relative;" aria-hidden="true">
-			<div class={Home.bgs} >
+			<div class="bgs" >
 				<Image src={bg1} alt="bg image" style="width: 100%; height: auto; object-fit: contain"/>
 				<Image src={bg2} alt="bg image" style="width: 100%; height: auto; object-fit: contain"/>
 				<Image src={bg3} alt="bg image" style="width: 100%; height: auto; object-fit: contain"/>
@@ -63,11 +63,11 @@ import Question from "../components/Question.astro";
 				<Image src={bg5} alt="bg image" style="width: 100%; height: auto; object-fit: contain"/>
 			</div>
 
-			<section class={Home.about}>
+			<section class="about">
 				<div class="pl-3 pr-3 pt-2">
 					<h2>What is QSC?</h2>
 
-					<div class:list={["p-5", `${Home.points}`]}>
+					<div class="p-5 points">
 						<div>
 							<div>
 								<img src={locationIcon.src} alt="an icon of a map pin">
@@ -90,7 +90,7 @@ import Question from "../components/Question.astro";
 								<h3>Professionals from the Space Industry</h3>
 							</div>
 							<div>
-								<p>We bring <span class={Home.em}>industry professionals</span> to our conference in order to provide delegates the most informative, inspiring, and memorable conference possible. Seven speakers will talk about their role in the space industry, their contributions, and where we are headed. Past speakers include CEOs, engineers, astrophysicists, astronauts, AI specialists, and more. Check out our <a href="../speakers">speakers page</a> on this site to look at all of our past speakers over the past 12 years!</p>
+								<p>We bring <span class="em">industry professionals</span> to our conference in order to provide delegates the most informative, inspiring, and memorable conference possible. Seven speakers will talk about their role in the space industry, their contributions, and where we are headed. Past speakers include CEOs, engineers, astrophysicists, astronauts, AI specialists, and more. Check out our <a href="../speakers">speakers page</a> on this site to look at all of our past speakers over the past 12 years!</p>
 							</div>
 						</div>
 
@@ -122,8 +122,8 @@ import Question from "../components/Question.astro";
 					</div>
 				</div>
 			</section>
-			<section class={Home.faq}>
-				<div class={Home.watermark} aria-hidden="true">?</div>
+			<section class="faq">
+				<div class="watermark" aria-hidden="true">?</div>
 				<div class="pl-3 pt-2">
 					<h2>Frequently Asked Questions</h2>
 					<div class="p-4">
@@ -152,3 +152,271 @@ import Question from "../components/Question.astro";
 		</div>
 	</main>
 </Layout>
+<style lang="scss">
+	@import "../styles/fonts";
+	@import "../styles/variables";
+
+	$about-bg: rgba($dark-purple, 90%);
+	$faq-bg: rgba($light-purple, 80%);
+
+	main:has(.hero) {
+		background-image: url("../images/spacebg.png");
+		background-attachment: fixed;
+		background-size: cover;
+	}
+
+	.hero {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		min-height: calc(100vh - var(--navbar-height));
+		overflow: hidden;
+		position:relative;
+
+		>* {
+			z-index: 1;
+		}
+		.top {
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			flex-basis: 100%;
+			flex-grow: 1;
+		}
+
+		.top > div {
+			display: flex;
+			flex-direction: row;
+			flex-basis: 100%;
+			justify-content: space-evenly;
+			@media screen and (max-width: $screen-mobile-large) {
+				justify-content: center;
+			}
+			gap: 3rem;
+			align-items: center;
+			flex-wrap: wrap;
+
+			.logo-container {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+
+			.heroTitleBox {
+				.heroTitle {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					position: relative;
+					h1 {
+						@media screen and (max-width: $screen-mobile-large){
+							font-size: 4rem;
+							line-height: 2em;
+						}
+					}
+				}
+				.tickets {
+					color: darken($light-purple,4);
+					margin-top: 1em;
+					a {
+						font-size: 2.5em;
+						background-color: rgba($dark-purple, 40%);
+						font-family: $quicksand;
+						font-weight: $regular-weight;
+						border: .5rem solid rgba($light-purple, 40%);
+						border-radius: 1rem;
+						padding-inline: .3em;
+						text-decoration: none;
+						color:inherit;
+					}
+					a:hover, a:focus {
+						color: lighten($light-purple, 2);
+						font-weight: $medium-weight;
+						background-color: rgba(lighten($dark-purple,10), 40%);
+					}
+				}
+			}
+		}
+
+		.bottom {
+			background-color: rgba($light-purple, 40%);
+			padding: 1em;
+			padding-inline: 2em;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			div {
+				display: flex;
+				font-size: 2.5rem;
+				font-weight: $heavy-weight;
+				flex-grow: 1;
+				justify-content: center;
+
+				> * {
+					margin: 0 auto;
+				}
+				@media screen and (max-width: $screen-mobile-large) {
+					flex-direction: column;
+				}
+			}
+		}
+
+		@media screen and (max-width: $screen-mobile-large) {
+			img {
+				display: none;
+			}
+		}
+
+		@media screen and (max-width: $screen-desktop) {
+			* {
+				text-align: center;
+			}
+		}
+	}
+
+	// black to cover the bg image to make text readable
+	.hero::before {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width:100%;
+		height:100%;
+		background-color: rgba(0 0 0 / .30);
+		z-index: 0;
+		content:"";
+	}
+
+	.bgs {
+		position: absolute;
+		overflow:hidden;
+		z-index: 0;
+		max-height: 100%;
+
+		* {
+			display:block;
+		}
+	}
+
+	.about {
+		position: relative;
+		margin: 0;
+		background-color: $about-bg;
+		//background: linear-gradient(to bottom, $about-bg 95%, $faq-bg 100%);
+
+		a {
+			color: lighten($orange,9);
+			font-weight: $medium-weight;
+
+		}
+		a:hover {
+			color: $white;
+		}
+
+		.points {
+			--l-padding: 2rem;
+			display: flex;
+			flex-direction: column;
+			gap: 1em;
+			align-items: center;
+
+			> div {
+
+			}
+
+			h3 {
+				font-family: $quicksand;
+				font-weight: $regular-weight;
+				margin-left: var(--l-padding);
+				margin-bottom: .1em;
+				@media screen and (max-width: $screen-mobile-large) {
+					text-align: center;
+					margin-left: 0;
+				}
+			}
+
+			div:has(> img) {
+				display: flex;
+				justify-content: left;
+				align-items: center;
+				padding: 1rem;
+				gap: 2rem;
+				margin-left: var(--l-padding);
+				@media screen and (max-width: $screen-mobile-large) {
+					justify-content: center;
+					margin:0;
+				}
+			}
+
+			//div with the map and calendar
+			div:has(> img) {
+				img {
+					height: 8rem;
+					width: auto;
+				}
+			}
+
+			div:has(>p) {
+				p {
+					padding: var(--l-padding);
+					background-color: rgba(darken($light-purple,2), 60%);
+					border-radius: 15px;
+					max-width:80%;
+
+					.em {
+						color: $orange;
+						font-weight: $heavy-weight;
+					}
+				}
+				@media screen and (max-width: $screen-mobile-large) {
+					display:flex;
+					justify-content: center;
+				}
+			}
+		}
+	}
+
+	.faq {
+		background-color: $faq-bg;
+		//background: linear-gradient(to bottom, $about-bg 5%, $faq-bg 10%);
+		position: relative;
+		z-index: 0;
+		overflow: hidden;
+
+		div:nth-child(2) {
+			position:relative;
+		}
+
+		* {
+			z-index: 2;
+		}
+
+		.watermark {
+			font-size: 50rem;
+			position: absolute;
+			font-weight: $medium-weight;
+			font-family: $inter;
+			top:-15rem;
+			left:-5rem;
+			line-height: 1em;
+			z-index: 1;
+			color: rgba(lighten($dark-purple,6), 80%);;
+		}
+
+		*:has(>faq-question) {
+			display: flex;
+			flex-direction: column;
+			gap: 3rem;
+
+			@media screen and (max-width: $screen-mobile-large) {
+				//  align-items: center;
+			}
+		}
+	}
+
+	section {
+		display: block;
+		margin: 0;
+		padding: 0;
+	}
+</style>

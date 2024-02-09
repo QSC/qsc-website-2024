@@ -1,10 +1,8 @@
 ---
+import "../styles/main.scss"
 import Layout from "../layouts/Layout.astro";
-import About from "../styles/about.module.scss"
 import Exec from "../components/Exec.astro";
 import ExecGroup from "../components/ExecGroup.astro";
-import "../styles/_fonts.scss"
-import "../styles/main.scss"
 
 import aislyn from "../images/team/Aislyn.png"
 import grant from "../images/team/Grant.png"
@@ -36,7 +34,7 @@ import placeholder from "../images/qsc_circle_outlined.png"
     <meta slot="head" property="og:url" content="https://www.qsconference.ca/about-us">
     <link slot="head" rel="canonical" href="https://qsconference.com/about-us">
 
-    <main slot="content" class={About.main}>
+    <main slot="content" class="main">
         <section>
             <h1>About Us</h1>
             <p>The Queen's Space Conference is an annual student-run conference that has taken place every year for over a decade. The QSC executive team is comprised of 22 passionate students from different disciplines and backgrounds that come together to provide opportunities for our conference delegates every year. We strive to bring impactful speakers to our conference to deliver enriching presentations and to help students break into the industry by facilitating networking opportunities and connections. Meet our executive team below! If you have questions/inquiries you can click on the email buttons next to the team titles.</p>
@@ -44,7 +42,7 @@ import placeholder from "../images/qsc_circle_outlined.png"
 
         <section>
             <h2>&#8212;The Team&#8212;</h2>
-            <div class={About.groups}>
+            <div class="groups">
                 <ExecGroup title="QSC Chairs" email="qsc@engsoc.queensu.ca">
                     <Exec img={aislyn} name="Aislyn Watson" position="Co-Chair"/>
                     <Exec img={grant} name="Grant Hurley" position="Co-Chair" linkedin="https://www.linkedin.com/in/grant-hurley-a83026233/"/>
@@ -97,3 +95,59 @@ import placeholder from "../images/qsc_circle_outlined.png"
         </section>
     </main>
 </Layout>
+<style lang="scss">
+  @import "../styles/fonts";
+  @import "../styles/variables";
+
+  .main {
+    background-image: url("../images/spacebg.png");
+    background-attachment: fixed;
+    background-size: cover;
+
+    h1 {
+      color: lighten($dark-purple,2);
+      font-size: 5em;
+      @media screen and (max-width: $screen-mobile-large) {
+        font-size: 4em;
+      }
+    }
+
+    h2 {
+      color: lighten($light-purple,3);
+      font-size: 5em;
+      text-align: center;
+      margin-bottom: .2em;
+      @media screen and (max-width: $screen-mobile-large) {
+        font-size: 3em;
+      }
+
+      @media screen and (max-width: $screen-mobile-medium) {
+        font-size: 2.5em;
+      }
+    }
+
+    .groups {
+      display: flex;
+      flex-direction: column;
+      gap:1.5em;
+      padding-bottom: 1em;
+    }
+
+    p {
+      @media screen and (min-width: $screen-mobile-large) {
+        max-width: 75%;
+      }
+    }
+
+    section:nth-of-type(1) {
+      background-color:darken(rgba($light-purple,80%),2);
+      padding-inline:2em;
+      padding-top:1em;
+      padding-bottom: 2em;
+    }
+
+    section:nth-of-type(2) {
+      background-color: rgba($dark-purple,80%);
+    }
+  }
+</style>

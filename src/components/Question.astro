@@ -1,12 +1,11 @@
 ---
 import "../styles/main.scss"
-import Question from "../styles/Question.module.scss";
 import ShuttleArrowIcon from "./ShuttleArrowIcon.astro";
 const { question } = Astro.props;
 ---
 
 <faq-question>
-    <div class={Question.header}>
+    <div class="header">
         <p>{question}</p>
         <button class="question-button">
             <div>
@@ -65,3 +64,61 @@ const { question } = Astro.props;
     // Tell the browser to use our AstroHeart class for <astro-heart> elements.
     customElements.define("faq-question", Question);
 </script>
+<style lang="scss">
+  @import "../styles/fonts";
+  @import "../styles/variables";
+
+  $border-rad: 1em;
+  faq-question {
+    position: relative;
+    display: block;
+    background-color: darken($light-purple,2);
+    border-radius: $border-rad;
+    max-width: 50vw;
+    //border: 1rem solid darken($dark-purple, 3);
+    box-shadow:inset 0px 0px 0px 10px darken($dark-purple, 3);
+    word-wrap: break-word;
+    @media screen and (max-width: $screen-mobile-large) {
+      max-width: 80vw;
+    }
+    .header {
+      font-family: $inter;
+      background-color: $dark-purple;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1em;
+      border-radius: $border-rad;
+      border: 1rem solid darken($dark-purple, 3);
+      width:100%;
+      gap:1em;
+
+      button {
+        all: unset;
+        cursor: pointer;
+      }
+      button:focus-visible{
+        outline: $light-purple solid 3px;
+      }
+
+      div:has(> svg) {
+        display:flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      :global(svg) {
+        height: 2em;
+        width: auto;
+        color:$light-purple;
+      }
+
+      button:hover {
+        svg {
+          color: darken($light-purple, 5)
+        }
+      }
+    }
+  }
+</style>
