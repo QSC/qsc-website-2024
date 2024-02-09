@@ -1,15 +1,13 @@
 ---
-import Modal from "../styles/Modal.module.scss"
-
 const { openButton } = Astro.props;
 ---
 
 <div>
     <slot name="button"/>
-    <dialog role="dialog" class={Modal.modal}>
+    <dialog role="dialog" class="modal">
         <div>
             <div>
-                <button class={Modal.closeButton}>X</button>
+                <button class="closeButton">X</button>
             </div>
             <slot name="content"/>
         </div>
@@ -19,8 +17,6 @@ const { openButton } = Astro.props;
 
 
 <script>
-    import Modal from "../styles/Modal.module.scss"
-
     const modalDivs = document.querySelectorAll("div:has(>dialog)")
 
     // closing by clicking outside
@@ -45,3 +41,39 @@ const { openButton } = Astro.props;
         })
     })
 </script>
+<style lang="scss">
+  @import "../styles/fonts";
+  @import "../styles/variables";
+
+  .modal::backdrop {
+    background-color: rgba($light-purple, 60%);
+    opacity: 60%;
+  }
+
+  .modal {
+    background-color: $dark-purple;
+    border: $white 5px solid;
+    color: $white;
+    border-radius: 5px;
+    padding:.5em;
+    min-width: 100px;
+
+    >div>div:nth-child(1) {
+      width:100%;
+      display:flex;
+      justify-content: right;
+    }
+
+    .closeButton {
+      //all: unset;
+      cursor: pointer;
+      background-color: purple;
+      position:sticky;
+      top:0;
+      right:0;
+      :focus-visible{
+        outline: red solid 3px;
+      }
+    }
+  }
+</style>
