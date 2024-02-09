@@ -56,13 +56,10 @@
   }
 
   .history {
-    h2 {
-      color:$light-purple;
-      scroll-margin-top: calc(var(--navbar-height));
-    }
 
     >p {
       line-height: 2em;
+      margin-block:1em;
 
       img {
         vertical-align:middle;

@@ -6,7 +6,6 @@ import "../styles/main.scss";
 const forSale = true
 ---
 <Layout title="Tickets">
-    <!--<meta slot="head" name="description" property="og:description" content="Buy tickets for Queen's Space Conference (QSC) 2024! Ticket prices are $75 for a full, two-day ticket, and $50 for a one-day ticket. QSC is an annual space conference held in Kingston, Ontario. The conference is centered around a series of exciting talks from professionals in the space spector, innovative workshops, and networking opportunities. Come to QSC 2024 on Febuary 3rd and Febuary 4th to learn about all things space." />-->
     <meta slot="head" name="description" property="og:description" content="Tickets are now sold out for QSC 2024. Check back in the fall for QSC 2025 tickets!" />
     <meta slot="head" property="og:url" content="https://www.qsconference.ca/tickets">
     <link slot="head" rel="canonical" href="https://qsconference.com/tickets">
@@ -16,93 +15,93 @@ const forSale = true
             <h1>Tickets</h1>
             <p>Thank you for your interest in attending the Queen's Space Conference!<br/>
                 Ticket sales have ended for QSC 2024. Ticket sales for QSC 2025 will be live in fall of 2024!</p>
-            <!--<p class={Tickets.ticketBlurb}>Thank you for considering being a delegate for QSC 2024! <br/>We cannot wait to bring you more innovative talks and an enriching weekend at the 2024 Queen's Space Conference.</p>-->
-            <!--<article>-->
-            <!--    <section>-->
-            <!--        <a class={Tickets.bursaryBlurb} href="#bursary">*Bursary available for Queen’s Engineering Students. See details on applying at the bottom of the page.</a>-->
-            <!--        <div class={Tickets.cards}>-->
-            <!--            <div>-->
-            <!--                <div class={Tickets.card}>-->
-            <!--                    <h2>One Day Ticket</h2>-->
-            <!--                    <p class={Tickets.price}>$50<span class="orange">*</span></p>-->
-            <!--                    <p class={Tickets.date}>Only Saturday, February 3rd</p>-->
-            <!--                    <ul>-->
-            <!--                        <li>Attendance on Saturday, February 3rd</li>-->
-            <!--                        <li>4 speakers (including keynote speaker)</li>-->
-            <!--                        <li>Case competition with prizes</li>-->
-            <!--                        <li>Networking event at the venue Saturday night</li>-->
-            <!--                        <li>Breakfast, lunch, and dinner on Saturday</li>-->
-            <!--                    </ul>-->
-            <!--                    <a class={Tickets.ticketButton} href="https://www.engsoc.queensu.ca/product/queens-space-conference-delegate-ticket-one-day/" target="_blank">Buy One-Day Ticket</a>-->
-            <!--                </div>-->
-            <!--            </div>-->
-            <!--            <div>-->
-            <!--                <div class={Tickets.card}>-->
-            <!--                    <h2>Full Ticket</h2>-->
-            <!--                    <p class={Tickets.price}>$75<span class="orange">*</span></p>-->
-            <!--                    <p class={Tickets.date}>Both February 3rd and 4th (Saturday and Sunday)</p>-->
-            <!--                    <ul>-->
-            <!--                        <li>Attendance on Saturday, February 3rd and Sunday, February 4th</li>-->
-            <!--                        <li>7 speakers (4 speakers on Saturday, including keynote speaker, and 3 speakers on Sunday)</li>-->
-            <!--                        <li>Case competition with prizes (Saturday)</li>-->
-            <!--                        <li>Club fair (Sunday)</li>-->
-            <!--                        <li>Networking event at the venue Saturday night</li>-->
-            <!--                        <li>Breakfast, lunch, and dinner on Saturday, breakfast on Sunday</li>-->
-            <!--                    </ul>-->
-            <!--                    <a class={Tickets.ticketButton} href="https://www.engsoc.queensu.ca/product/queens-space-conference-delegate-ticket-two-days/" target="_blank">Buy Full Ticket</a>-->
-            <!--                </div>-->
-            <!--            </div>-->
-            <!--        </div>-->
-            <!--    </section>-->
+            {/* <p class={Tickets.ticketBlurb}>Thank you for considering being a delegate for QSC 2024! <br/>We cannot wait to bring you more innovative talks and an enriching weekend at the 2024 Queen's Space Conference.</p>
+            <article>
+                <section>
+                    <a class={Tickets.bursaryBlurb} href="#bursary">*Bursary available for Queen’s Engineering Students. See details on applying at the bottom of the page.</a>
+                    <div class={Tickets.cards}>
+                        <div>
+                            <div class={Tickets.card}>
+                                <h2>One Day Ticket</h2>
+                                <p class={Tickets.price}>$50<span class="orange">*</span></p>
+                                <p class={Tickets.date}>Only Saturday, February 3rd</p>
+                                <ul>
+                                    <li>Attendance on Saturday, February 3rd</li>
+                                    <li>4 speakers (including keynote speaker)</li>
+                                    <li>Case competition with prizes</li>
+                                    <li>Networking event at the venue Saturday night</li>
+                                    <li>Breakfast, lunch, and dinner on Saturday</li>
+                                </ul>
+                                <a class={Tickets.ticketButton} href="https://www.engsoc.queensu.ca/product/queens-space-conference-delegate-ticket-one-day/" target="_blank">Buy One-Day Ticket</a>
+                            </div>
+                        </div>
+                        <div>
+                            <div class={Tickets.card}>
+                                <h2>Full Ticket</h2>
+                                <p class={Tickets.price}>$75<span class="orange">*</span></p>
+                                <p class={Tickets.date}>Both February 3rd and 4th (Saturday and Sunday)</p>
+                                <ul>
+                                    <li>Attendance on Saturday, February 3rd and Sunday, February 4th</li>
+                                    <li>7 speakers (4 speakers on Saturday, including keynote speaker, and 3 speakers on Sunday)</li>
+                                    <li>Case competition with prizes (Saturday)</li>
+                                    <li>Club fair (Sunday)</li>
+                                    <li>Networking event at the venue Saturday night</li>
+                                    <li>Breakfast, lunch, and dinner on Saturday, breakfast on Sunday</li>
+                                </ul>
+                                <a class={Tickets.ticketButton} href="https://www.engsoc.queensu.ca/product/queens-space-conference-delegate-ticket-two-days/" target="_blank">Buy Full Ticket</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
 
-            <!--    <section id="bursary">-->
-            <!--        <div class={Tickets.bursary}>-->
-            <!--            <h2>Queen’s Engineering Bursary</h2>-->
-            <!--            <p>Are you a Queen’s Engineering student interested in attending QSC 2024? Apply for a bursary from Engsoc below! A bursary can <span class="orange">reimburse</span> you for up to the <span class="orange">full cost</span> of the ticket! Check out the instructions below to apply for a bursary, then click the button to apply.</p>-->
-            <!--                <p class="red mt-1">Note that this bursary is only available to Engineering Students at Queen's University</p>-->
-            <!--            <a class={Tickets.bursaryButton} href="https://forms.office.com/Pages/ShareFormPage.aspx?id=eCPPiRaKW0S_qx14hTcxIXyaxYRdxflFhdM-OPpAMTtUQjY3UDVMNzVTMjVQTEEzVVROMjIzVEJWMS4u&sharetoken=aLg1GbDUDGZnOCAPRTbQ" target="_blank">Apply for Bursary</a>-->
-            <!--            <div class={Tickets.instructions}>-->
-            <!--                <h3>Bursary Form Instructions</h3>-->
-            <!--                <p>Click on the <span>Apply for Bursary</span> button above or below this message, and fill out the form! <br/> For questions 1, 2, 7, and 10 we have put the answers below, as they may be confusing. If you have any questions please let us know!</p>-->
+                <section id="bursary">
+                    <div class={Tickets.bursary}>
+                        <h2>Queen’s Engineering Bursary</h2>
+                        <p>Are you a Queen’s Engineering student interested in attending QSC 2024? Apply for a bursary from Engsoc below! A bursary can <span class="orange">reimburse</span> you for up to the <span class="orange">full cost</span> of the ticket! Check out the instructions below to apply for a bursary, then click the button to apply.</p>
+                            <p class="red mt-1">Note that this bursary is only available to Engineering Students at Queen's University</p>
+                        <a class={Tickets.bursaryButton} href="https://forms.office.com/Pages/ShareFormPage.aspx?id=eCPPiRaKW0S_qx14hTcxIXyaxYRdxflFhdM-OPpAMTtUQjY3UDVMNzVTMjVQTEEzVVROMjIzVEJWMS4u&sharetoken=aLg1GbDUDGZnOCAPRTbQ" target="_blank">Apply for Bursary</a>
+                        <div class={Tickets.instructions}>
+                            <h3>Bursary Form Instructions</h3>
+                            <p>Click on the <span>Apply for Bursary</span> button above or below this message, and fill out the form! <br/> For questions 1, 2, 7, and 10 we have put the answers below, as they may be confusing. If you have any questions please let us know!</p>
 
-            <!--                <div>-->
-            <!--                    <div class={Tickets.question}>-->
-            <!--                        <p>1.</p>-->
-            <!--                        <div>-->
-            <!--                            <p>What event or item are you requesting a bursary for?</p>-->
-            <!--                            <p>Internal Conference (ie. run by EngSoc)</p>-->
-            <!--                        </div>-->
-            <!--                    </div>-->
+                            <div>
+                                <div class={Tickets.question}>
+                                    <p>1.</p>
+                                    <div>
+                                        <p>What event or item are you requesting a bursary for?</p>
+                                        <p>Internal Conference (ie. run by EngSoc)</p>
+                                    </div>
+                                </div>
 
-            <!--                    <div class={Tickets.question}>-->
-            <!--                        <p>2.</p>-->
-            <!--                        <div>-->
-            <!--                            <p>If you are applying to an Internal Conference, which one is it?</p>-->
-            <!--                            <p>QSC</p>-->
-            <!--                        </div>-->
-            <!--                    </div>-->
+                                <div class={Tickets.question}>
+                                    <p>2.</p>
+                                    <div>
+                                        <p>If you are applying to an Internal Conference, which one is it?</p>
+                                        <p>QSC</p>
+                                    </div>
+                                </div>
 
-            <!--                    <div class={Tickets.question}>-->
-            <!--                        <p>7.</p>-->
-            <!--                        <div>-->
-            <!--                            <p>What is the full fee of the event or item you are requesting a bursary for?</p>-->
-            <!--                            <p><span>Either</span> $50 <span>or</span> $75 <span>depending on which ticket you are buying!</span></p>-->
-            <!--                        </div>-->
-            <!--                    </div>-->
+                                <div class={Tickets.question}>
+                                    <p>7.</p>
+                                    <div>
+                                        <p>What is the full fee of the event or item you are requesting a bursary for?</p>
+                                        <p><span>Either</span> $50 <span>or</span> $75 <span>depending on which ticket you are buying!</span></p>
+                                    </div>
+                                </div>
 
-            <!--                    <div class={Tickets.question}>-->
-            <!--                        <p>10.</p>-->
-            <!--                        <div>-->
-            <!--                            <p>When is the payment for the item or event due?</p>-->
-            <!--                            <p>1/28/2024 <span>(January 28th, 2024)</span></p>-->
-            <!--                        </div>-->
-            <!--                    </div>-->
-            <!--                </div>-->
-            <!--                <a class={Tickets.bursaryButton} href="https://forms.office.com/Pages/ShareFormPage.aspx?id=eCPPiRaKW0S_qx14hTcxIXyaxYRdxflFhdM-OPpAMTtUQjY3UDVMNzVTMjVQTEEzVVROMjIzVEJWMS4u&sharetoken=aLg1GbDUDGZnOCAPRTbQ" target="_blank">Apply for Bursary</a>-->
-            <!--            </div>-->
-            <!--        </div>-->
-            <!--    </section>-->
-            <!--</article>-->
+                                <div class={Tickets.question}>
+                                    <p>10.</p>
+                                    <div>
+                                        <p>When is the payment for the item or event due?</p>
+                                        <p>1/28/2024 <span>(January 28th, 2024)</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <a class={Tickets.bursaryButton} href="https://forms.office.com/Pages/ShareFormPage.aspx?id=eCPPiRaKW0S_qx14hTcxIXyaxYRdxflFhdM-OPpAMTtUQjY3UDVMNzVTMjVQTEEzVVROMjIzVEJWMS4u&sharetoken=aLg1GbDUDGZnOCAPRTbQ" target="_blank">Apply for Bursary</a>
+                        </div>
+                    </div>
+                </section>
+            </article>*/}
         </div>
     </main>
 </Layout>
