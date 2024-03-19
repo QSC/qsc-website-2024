@@ -38,12 +38,15 @@ import placeholder from "../images/qsc_circle_outlined.png"
         <section>
             <h1>Join Us!</h1>
             <div class="intro-ps">
-                <p>We're hiring directors! The Queen's Space Conference is an entirely student-run event. That means that every year we hire a new team of more than 20 new volunteers to run the upcoming conference. Any student at Queen's can apply, no matter what year or program you are in. While QSC 2025 will take place at the beginning of 2025, all positions will be hired in March-May of this year. Depending on the position you may have some work in the summer, then the fall semester and beginning of the winter semester are busier as we prepare for the next conference. After QSC 2025, the team will wrap up operations and prepare to hire the team for QSC 2026. Click on the button below for more information, as well as the application process information!</p>
+                <p>We're hiring <em>directors</em> and <em>coordinators</em>! The Queen's Space Conference is an entirely student-run event. That means that every year we hire a new team of more than 20 new volunteers to run the upcoming conference. Any student at Queen's can apply, no matter what year or program you are in. While QSC 2025 will take place at the beginning of 2025, all positions will be hired in March-May of this year. Depending on the position you may have some work in the summer, then the fall semester and beginning of the winter semester are busier as we prepare for the next conference. After QSC 2025, the team will wrap up operations and prepare to hire the team for QSC 2026. Click on the button below for more information, as well as the application process information!</p>
                 <p>
-                    The new Co-Chairs of QSC 2025 have already been hired and they are excited to hire the new <b>directors</b> for QSC 2025. Applications for director positions are live and will close on March 18th. Applications for coordinator positions will be posted after the new directors are hired, and we will announce that on our website and on our instagram. If you have any questions, please reach out to us via email at <a href="mailto:qsc@engsoc.queensu.ca" target="_blank">qsc@engsoc.queensu.ca</a>, or on our instagram <a href="https://www.instagram.com/queensspace/" target="_blank">@queensspace</a>
+                    The new Co-Chairs of QSC 2025 have already been hired and they are excited to hire the new <em>directors</em> for QSC 2025. Applications for director positions are live and will close on March 18th. If it is past March 18th, <em>you can still apply</em>. Late applications are accepted, and will be reviewed if the position is not filled. We are looking for directors for all of our teams: <em>Logistics, Finance, Marketing, Sponsorship, Delegates, and Speakers.</em> Applications for coordinator positions are also live now. Coordinators are needed for all teams as well, with the addition of an IT Coordinator too. If you have any questions, please reach out to us via email at <a href="mailto:qsc@engsoc.queensu.ca" target="_blank">qsc@engsoc.queensu.ca</a>, or on our instagram <a href="https://www.instagram.com/queensspace/" target="_blank">@queensspace</a>
                 </p>
             </div>
-            <a class="apply" target="_blank" href="https://breezy.engsoc.queensu.ca/p/76b996bbc52f-queen-s-space-conference-director-positions">Click to Apply</a>
+            <div>
+                <a class="apply" target="_blank" href="https://breezy.engsoc.queensu.ca/p/76b996bbc52f-queen-s-space-conference-director-positions">Click to Apply for Director</a>
+                <a class="apply" target="_blank" href="https://breezy.engsoc.queensu.ca/p/b5026584e998-queen-s-space-conference-qsc-coordinator-positions">Click to Apply for Coordinator</a>
+            </div>
         </section>
     </main>
 </Layout>
@@ -70,10 +73,17 @@ import placeholder from "../images/qsc_circle_outlined.png"
       gap: 1em;
       margin-bottom: 1em;
 
-      b {
+      em {
         color: lighten($light-purple,5);
         font-size: 1.1em;
+        font-weight: $heavy-weight;
       }
+    }
+
+    div:has(>.apply) {
+      display:flex;
+      flex-wrap: wrap;
+      gap: 1em;
     }
 
     .apply {
